@@ -1,0 +1,20 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+C:\Users\darre\Documents\Ada\SelfDrivingCars\selfdriving.gpr
+20220328144306 1830dd02121b74d5c39f7b4e9ee4c736
+[BOUND OBJECT FILES]
+C:\Users\darre\Documents\Ada\SelfDrivingCars\obj\selfdrivingcar.o
+C:\Users\darre\Documents\Ada\SelfDrivingCars\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LC:\Users\darre\Documents\Ada\SelfDrivingCars\obj\
+-LC:\Users\darre\Documents\Ada\SelfDrivingCars\obj\
+-LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000

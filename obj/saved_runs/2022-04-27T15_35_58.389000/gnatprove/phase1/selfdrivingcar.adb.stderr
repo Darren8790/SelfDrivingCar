@@ -1,0 +1,2 @@
+selfdrivingcar.adb:16:41: error: expected type "SpeedO" defined at selfdrivingcar.ads:6
+selfdrivingcar.adb:16:41: error: found type "Standard.Boolean"

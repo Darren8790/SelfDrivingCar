@@ -1,0 +1,6 @@
+selfdrivingcar.adb:64:47: error: invalid prefix in selected component "TrafficLight"
+selfdrivingcar.adb:65:41: error: expected type "CarSpeed" defined at selfdrivingcar.ads:6
+selfdrivingcar.adb:65:41: error: found type "Standard.Boolean"
+selfdrivingcar.ads:75:40: error: malformed global list
+selfdrivingcar.ads:76:34: error: invalid prefix in selected component "TrafficLight"
+selfdrivingcar.ads:76:50: error: missing ";"

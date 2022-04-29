@@ -1,0 +1,1 @@
+selfdrivingcar.ads:45:54: medium: postcondition might fail, cannot prove (speedLimit)[#0]

@@ -1,0 +1,1352 @@
+module Selfdrivingcar__onoff
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type onoff
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (1 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = onoff,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type onoff__ref = { mutable onoff__content : onoff }
+  
+  function onoff__ref_onoff__content__projection (a: onoff__ref) : onoff =
+    a.onoff__content
+  
+  meta "model_projection" function onoff__ref_onoff__content__projection
+  
+  meta "inline:no" function onoff__ref_onoff__content__projection
+  
+  val onoff__havoc (x: onoff__ref) : unit
+    writes { x }
+end
+
+module Selfdrivingcar__onoff__rep
+  use Selfdrivingcar__onoff as Selfdrivingcar__onoff
+  use _gnatprove_standard.Main
+  use int.Int
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Selfdrivingcar__onoff.onoff,
+    predicate in_range = Selfdrivingcar__onoff.in_range
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Selfdrivingcar__gearbox
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type gearbox
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = gearbox,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type gearbox__ref = { mutable gearbox__content : gearbox }
+  
+  function gearbox__ref_gearbox__content__projection (a: gearbox__ref) : gearbox =
+    a.gearbox__content
+  
+  meta "model_projection" function gearbox__ref_gearbox__content__projection
+  
+  meta "inline:no" function gearbox__ref_gearbox__content__projection
+  
+  val gearbox__havoc (x: gearbox__ref) : unit
+    writes { x }
+end
+
+module Selfdrivingcar__gearbox__rep
+  use Selfdrivingcar__gearbox as Selfdrivingcar__gearbox
+  use _gnatprove_standard.Main
+  use int.Int
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Selfdrivingcar__gearbox.gearbox,
+    predicate in_range = Selfdrivingcar__gearbox.in_range
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Selfdrivingcar__chargelevel
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type chargelevel = <range 0 100>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (100 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = chargelevel,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type chargelevel__ref = { mutable chargelevel__content : chargelevel }
+  
+  function chargelevel__ref_chargelevel__content__projection (a: chargelevel__ref) : chargelevel =
+    a.chargelevel__content
+  
+  meta "model_projection" function chargelevel__ref_chargelevel__content__projection
+  
+  meta "inline:no" function chargelevel__ref_chargelevel__content__projection
+  
+  val chargelevel__havoc (x: chargelevel__ref) : unit
+    writes { x }
+end
+
+module Selfdrivingcar__chargelevel__rep
+  use Selfdrivingcar__chargelevel as Selfdrivingcar__chargelevel
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Selfdrivingcar__chargelevel.chargelevel) : int =
+    Selfdrivingcar__chargelevel.chargelevel'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Selfdrivingcar__chargelevel.chargelevel,
+    predicate in_range = Selfdrivingcar__chargelevel.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Selfdrivingcar__carspeed
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type carspeed = <range 0 100>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (100 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = carspeed,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type carspeed__ref = { mutable carspeed__content : carspeed }
+  
+  function carspeed__ref_carspeed__content__projection (a: carspeed__ref) : carspeed =
+    a.carspeed__content
+  
+  meta "model_projection" function carspeed__ref_carspeed__content__projection
+  
+  meta "inline:no" function carspeed__ref_carspeed__content__projection
+  
+  val carspeed__havoc (x: carspeed__ref) : unit
+    writes { x }
+end
+
+module Selfdrivingcar__carspeed__rep
+  use Selfdrivingcar__carspeed as Selfdrivingcar__carspeed
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Selfdrivingcar__carspeed.carspeed) : int =
+    Selfdrivingcar__carspeed.carspeed'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Selfdrivingcar__carspeed.carspeed,
+    predicate in_range = Selfdrivingcar__carspeed.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Selfdrivingcar__object
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type object
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (1 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = object,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type object__ref = { mutable object__content : object }
+  
+  function object__ref_object__content__projection (a: object__ref) : object =
+    a.object__content
+  
+  meta "model_projection" function object__ref_object__content__projection
+  
+  meta "inline:no" function object__ref_object__content__projection
+  
+  val object__havoc (x: object__ref) : unit
+    writes { x }
+end
+
+module Selfdrivingcar__object__rep
+  use Selfdrivingcar__object as Selfdrivingcar__object
+  use _gnatprove_standard.Main
+  use int.Int
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Selfdrivingcar__object.object,
+    predicate in_range = Selfdrivingcar__object.in_range
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Selfdrivingcar__diagnosticmode
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type diagnosticmode
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (1 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = diagnosticmode,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type diagnosticmode__ref = {
+                            mutable diagnosticmode__content : diagnosticmode
+                            }
+  
+  function diagnosticmode__ref_diagnosticmode__content__projection (a: diagnosticmode__ref) : diagnosticmode =
+    a.diagnosticmode__content
+  
+  meta "model_projection" function diagnosticmode__ref_diagnosticmode__content__projection
+  
+  meta "inline:no" function diagnosticmode__ref_diagnosticmode__content__projection
+  
+  val diagnosticmode__havoc (x: diagnosticmode__ref) : unit
+    writes { x }
+end
+
+module Selfdrivingcar__diagnosticmode__rep
+  use Selfdrivingcar__diagnosticmode as Selfdrivingcar__diagnosticmode
+  use _gnatprove_standard.Main
+  use int.Int
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Selfdrivingcar__diagnosticmode.diagnosticmode,
+    predicate in_range = Selfdrivingcar__diagnosticmode.in_range
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Selfdrivingcar__chargestate
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type chargestate
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = chargestate,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type chargestate__ref = { mutable chargestate__content : chargestate }
+  
+  function chargestate__ref_chargestate__content__projection (a: chargestate__ref) : chargestate =
+    a.chargestate__content
+  
+  meta "model_projection" function chargestate__ref_chargestate__content__projection
+  
+  meta "inline:no" function chargestate__ref_chargestate__content__projection
+  
+  val chargestate__havoc (x: chargestate__ref) : unit
+    writes { x }
+end
+
+module Selfdrivingcar__chargestate__rep
+  use Selfdrivingcar__chargestate as Selfdrivingcar__chargestate
+  use _gnatprove_standard.Main
+  use int.Int
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Selfdrivingcar__chargestate.chargestate,
+    predicate in_range = Selfdrivingcar__chargestate.in_range
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Selfdrivingcar__trafficlight
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type trafficlight
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = trafficlight,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type trafficlight__ref = { mutable trafficlight__content : trafficlight }
+  
+  function trafficlight__ref_trafficlight__content__projection (a: trafficlight__ref) : trafficlight =
+    a.trafficlight__content
+  
+  meta "model_projection" function trafficlight__ref_trafficlight__content__projection
+  
+  meta "inline:no" function trafficlight__ref_trafficlight__content__projection
+  
+  val trafficlight__havoc (x: trafficlight__ref) : unit
+    writes { x }
+end
+
+module Selfdrivingcar__trafficlight__rep
+  use Selfdrivingcar__trafficlight as Selfdrivingcar__trafficlight
+  use _gnatprove_standard.Main
+  use int.Int
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Selfdrivingcar__trafficlight.trafficlight,
+    predicate in_range = Selfdrivingcar__trafficlight.in_range
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Selfdrivingcar__car__rep
+  use _gnatprove_standard.Main
+  use int.Int
+  use Selfdrivingcar__onoff as Selfdrivingcar__onoff
+  use Selfdrivingcar__onoff__rep as Selfdrivingcar__onoff__rep
+  use Selfdrivingcar__gearbox as Selfdrivingcar__gearbox
+  use Selfdrivingcar__gearbox__rep as Selfdrivingcar__gearbox__rep
+  use Selfdrivingcar__chargelevel as Selfdrivingcar__chargelevel
+  use Selfdrivingcar__chargelevel__rep as Selfdrivingcar__chargelevel__rep
+  use Selfdrivingcar__carspeed as Selfdrivingcar__carspeed
+  use Selfdrivingcar__carspeed__rep as Selfdrivingcar__carspeed__rep
+  use Selfdrivingcar__object as Selfdrivingcar__object
+  use Selfdrivingcar__object__rep as Selfdrivingcar__object__rep
+  use Selfdrivingcar__diagnosticmode as Selfdrivingcar__diagnosticmode
+  use Selfdrivingcar__diagnosticmode__rep as Selfdrivingcar__diagnosticmode__rep
+  use Selfdrivingcar__chargestate as Selfdrivingcar__chargestate
+  use Selfdrivingcar__chargestate__rep as Selfdrivingcar__chargestate__rep
+  use Selfdrivingcar__trafficlight as Selfdrivingcar__trafficlight
+  use Selfdrivingcar__trafficlight__rep as Selfdrivingcar__trafficlight__rep
+  
+  type __split_fields = {
+                       rec__selfdrivingcar__car__gear :
+                         Selfdrivingcar__gearbox.gearbox;
+                       rec__selfdrivingcar__car__switch :
+                         Selfdrivingcar__onoff.onoff;
+                       rec__selfdrivingcar__car__battery :
+                         Selfdrivingcar__chargelevel.chargelevel;
+                       rec__selfdrivingcar__car__speed :
+                         Selfdrivingcar__carspeed.carspeed;
+                       rec__selfdrivingcar__car__sensor :
+                         Selfdrivingcar__object.object;
+                       rec__selfdrivingcar__car__diagnostic :
+                         Selfdrivingcar__diagnosticmode.diagnosticmode;
+                       rec__selfdrivingcar__car__charge :
+                         Selfdrivingcar__chargestate.chargestate;
+                       rec__selfdrivingcar__car__signal :
+                         Selfdrivingcar__trafficlight.trafficlight
+                       }
+  
+  function __split_fields_rec__selfdrivingcar__car__gear__projection (a: __split_fields) : 
+    Selfdrivingcar__gearbox.gearbox =
+    a.rec__selfdrivingcar__car__gear
+  
+  meta "model_projection" function __split_fields_rec__selfdrivingcar__car__gear__projection
+  
+  meta "inline:no" function __split_fields_rec__selfdrivingcar__car__gear__projection
+  
+  function __split_fields_rec__selfdrivingcar__car__switch__projection (a: __split_fields) : 
+    Selfdrivingcar__onoff.onoff =
+    a.rec__selfdrivingcar__car__switch
+  
+  meta "model_projection" function __split_fields_rec__selfdrivingcar__car__switch__projection
+  
+  meta "inline:no" function __split_fields_rec__selfdrivingcar__car__switch__projection
+  
+  function __split_fields_rec__selfdrivingcar__car__battery__projection (a: __split_fields) : 
+    Selfdrivingcar__chargelevel.chargelevel =
+    a.rec__selfdrivingcar__car__battery
+  
+  meta "model_projection" function __split_fields_rec__selfdrivingcar__car__battery__projection
+  
+  meta "inline:no" function __split_fields_rec__selfdrivingcar__car__battery__projection
+  
+  function __split_fields_rec__selfdrivingcar__car__speed__projection (a: __split_fields) : 
+    Selfdrivingcar__carspeed.carspeed =
+    a.rec__selfdrivingcar__car__speed
+  
+  meta "model_projection" function __split_fields_rec__selfdrivingcar__car__speed__projection
+  
+  meta "inline:no" function __split_fields_rec__selfdrivingcar__car__speed__projection
+  
+  function __split_fields_rec__selfdrivingcar__car__sensor__projection (a: __split_fields) : 
+    Selfdrivingcar__object.object =
+    a.rec__selfdrivingcar__car__sensor
+  
+  meta "model_projection" function __split_fields_rec__selfdrivingcar__car__sensor__projection
+  
+  meta "inline:no" function __split_fields_rec__selfdrivingcar__car__sensor__projection
+  
+  function __split_fields_rec__selfdrivingcar__car__diagnostic__projection (a: __split_fields) : 
+    Selfdrivingcar__diagnosticmode.diagnosticmode =
+    a.rec__selfdrivingcar__car__diagnostic
+  
+  meta "model_projection" function __split_fields_rec__selfdrivingcar__car__diagnostic__projection
+  
+  meta "inline:no" function __split_fields_rec__selfdrivingcar__car__diagnostic__projection
+  
+  function __split_fields_rec__selfdrivingcar__car__charge__projection (a: __split_fields) : 
+    Selfdrivingcar__chargestate.chargestate =
+    a.rec__selfdrivingcar__car__charge
+  
+  meta "model_projection" function __split_fields_rec__selfdrivingcar__car__charge__projection
+  
+  meta "inline:no" function __split_fields_rec__selfdrivingcar__car__charge__projection
+  
+  function __split_fields_rec__selfdrivingcar__car__signal__projection (a: __split_fields) : 
+    Selfdrivingcar__trafficlight.trafficlight =
+    a.rec__selfdrivingcar__car__signal
+  
+  meta "model_projection" function __split_fields_rec__selfdrivingcar__car__signal__projection
+  
+  meta "inline:no" function __split_fields_rec__selfdrivingcar__car__signal__projection
+  
+  type __split_fields__ref = {
+                            mutable __split_fields__content : __split_fields
+                            }
+  
+  function __split_fields__ref___split_fields__content__projection (a: __split_fields__ref) : __split_fields =
+    __split_fields__content a
+  
+  meta "model_projection" function __split_fields__ref___split_fields__content__projection
+  
+  meta "inline:no" function __split_fields__ref___split_fields__content__projection
+  
+  val __split_fields__havoc (x: __split_fields__ref) : unit
+    writes { x }
+  
+  type __rep = { __split_fields : __split_fields }
+  
+  function __rep___split_fields__projection (a: __rep) : __split_fields =
+    __split_fields a
+  
+  meta "model_projection" function __rep___split_fields__projection
+  
+  meta "inline:no" function __rep___split_fields__projection
+  
+  function to_base (a: __rep) : __rep = a
+  
+  val to_base (a: __rep) : __rep
+    ensures { result = (to_base (a : __rep)) }
+  
+  function of_base (a: __rep) : __rep = a
+  
+  val of_base (a: __rep) : __rep
+    ensures { result = (of_base (a : __rep)) }
+  
+  predicate selfdrivingcar__car__gear__pred (a: __rep) = true
+  
+  val selfdrivingcar__car__gear__pred (a: __rep) : bool
+    ensures { result <-> (selfdrivingcar__car__gear__pred (a : __rep)) }
+  
+  val rec__selfdrivingcar__car__gear_ (a: __rep) : Selfdrivingcar__gearbox.gearbox
+    requires { selfdrivingcar__car__gear__pred a }
+    ensures { (result = ((__split_fields a).rec__selfdrivingcar__car__gear)) }
+  
+  predicate selfdrivingcar__car__switch__pred (a: __rep) = true
+  
+  val selfdrivingcar__car__switch__pred (a: __rep) : bool
+    ensures { result <-> (selfdrivingcar__car__switch__pred (a : __rep)) }
+  
+  val rec__selfdrivingcar__car__switch_ (a: __rep) : Selfdrivingcar__onoff.onoff
+    requires { selfdrivingcar__car__switch__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__selfdrivingcar__car__switch)) }
+  
+  predicate selfdrivingcar__car__battery__pred (a: __rep) = true
+  
+  val selfdrivingcar__car__battery__pred (a: __rep) : bool
+    ensures { result <-> (selfdrivingcar__car__battery__pred (a : __rep)) }
+  
+  val rec__selfdrivingcar__car__battery_ (a: __rep) : Selfdrivingcar__chargelevel.chargelevel
+    requires { selfdrivingcar__car__battery__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__selfdrivingcar__car__battery)) }
+  
+  predicate selfdrivingcar__car__speed__pred (a: __rep) = true
+  
+  val selfdrivingcar__car__speed__pred (a: __rep) : bool
+    ensures { result <-> (selfdrivingcar__car__speed__pred (a : __rep)) }
+  
+  val rec__selfdrivingcar__car__speed_ (a: __rep) : Selfdrivingcar__carspeed.carspeed
+    requires { selfdrivingcar__car__speed__pred a }
+    ensures { (result = ((__split_fields a).rec__selfdrivingcar__car__speed)) }
+  
+  predicate selfdrivingcar__car__sensor__pred (a: __rep) = true
+  
+  val selfdrivingcar__car__sensor__pred (a: __rep) : bool
+    ensures { result <-> (selfdrivingcar__car__sensor__pred (a : __rep)) }
+  
+  val rec__selfdrivingcar__car__sensor_ (a: __rep) : Selfdrivingcar__object.object
+    requires { selfdrivingcar__car__sensor__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__selfdrivingcar__car__sensor)) }
+  
+  predicate selfdrivingcar__car__diagnostic__pred (a: __rep) = true
+  
+  val selfdrivingcar__car__diagnostic__pred (a: __rep) : bool
+    ensures { result <-> (selfdrivingcar__car__diagnostic__pred (a : __rep)) }
+  
+  val rec__selfdrivingcar__car__diagnostic_ (a: __rep) : Selfdrivingcar__diagnosticmode.diagnosticmode
+    requires { selfdrivingcar__car__diagnostic__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__selfdrivingcar__car__diagnostic)) }
+  
+  predicate selfdrivingcar__car__charge__pred (a: __rep) = true
+  
+  val selfdrivingcar__car__charge__pred (a: __rep) : bool
+    ensures { result <-> (selfdrivingcar__car__charge__pred (a : __rep)) }
+  
+  val rec__selfdrivingcar__car__charge_ (a: __rep) : Selfdrivingcar__chargestate.chargestate
+    requires { selfdrivingcar__car__charge__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__selfdrivingcar__car__charge)) }
+  
+  predicate selfdrivingcar__car__signal__pred (a: __rep) = true
+  
+  val selfdrivingcar__car__signal__pred (a: __rep) : bool
+    ensures { result <-> (selfdrivingcar__car__signal__pred (a : __rep)) }
+  
+  val rec__selfdrivingcar__car__signal_ (a: __rep) : Selfdrivingcar__trafficlight.trafficlight
+    requires { selfdrivingcar__car__signal__pred a }
+    ensures { (result
+                 = ((__split_fields a).rec__selfdrivingcar__car__signal)) }
+  
+  function bool_eq (a: __rep) (b: __rep) : bool =
+    if ((((Selfdrivingcar__gearbox__rep.to_rep
+             ((__split_fields a).rec__selfdrivingcar__car__gear))
+            = (Selfdrivingcar__gearbox__rep.to_rep
+                 ((__split_fields b).rec__selfdrivingcar__car__gear))) /\
+           ((Selfdrivingcar__onoff__rep.to_rep
+               ((__split_fields a).rec__selfdrivingcar__car__switch))
+              = (Selfdrivingcar__onoff__rep.to_rep
+                   ((__split_fields b).rec__selfdrivingcar__car__switch)))) /\
+          (((((Selfdrivingcar__chargelevel__rep.to_rep
+                 ((__split_fields a).rec__selfdrivingcar__car__battery))
+                = (Selfdrivingcar__chargelevel__rep.to_rep
+                     ((__split_fields b).rec__selfdrivingcar__car__battery))) /\
+               ((Selfdrivingcar__carspeed__rep.to_rep
+                   ((__split_fields a).rec__selfdrivingcar__car__speed))
+                  = (Selfdrivingcar__carspeed__rep.to_rep
+                       ((__split_fields b).rec__selfdrivingcar__car__speed)))) /\
+              ((Selfdrivingcar__object__rep.to_rep
+                  ((__split_fields a).rec__selfdrivingcar__car__sensor))
+                 = (Selfdrivingcar__object__rep.to_rep
+                      ((__split_fields b).rec__selfdrivingcar__car__sensor)))) /\
+             ((((Selfdrivingcar__diagnosticmode__rep.to_rep
+                   ((__split_fields a).rec__selfdrivingcar__car__diagnostic))
+                  = (Selfdrivingcar__diagnosticmode__rep.to_rep
+                       ((__split_fields b).rec__selfdrivingcar__car__diagnostic))) /\
+                 ((Selfdrivingcar__chargestate__rep.to_rep
+                     ((__split_fields a).rec__selfdrivingcar__car__charge))
+                    = (Selfdrivingcar__chargestate__rep.to_rep
+                         ((__split_fields b).rec__selfdrivingcar__car__charge)))) /\
+                ((Selfdrivingcar__trafficlight__rep.to_rep
+                    ((__split_fields a).rec__selfdrivingcar__car__signal))
+                   = (Selfdrivingcar__trafficlight__rep.to_rep
+                        ((__split_fields b).rec__selfdrivingcar__car__signal)))))) then
+      True
+    else False
+  
+  val bool_eq (a: __rep) (b: __rep) : bool
+    ensures { result = ((bool_eq (a : __rep)) (b : __rep)) }
+end
+
+module Selfdrivingcar__car
+  use export Selfdrivingcar__car__rep
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type car = __rep
+  
+  val function value__size : int
+  
+  val function object__size : int
+  
+  val function alignment : int
+  
+  axiom value__size_axiom: (value__size >= (0 : int))
+  
+  axiom object__size_axiom: (object__size >= (0 : int))
+  
+  axiom alignment_axiom: (alignment >= (0 : int))
+  
+  val function selfdrivingcar__car__gear__first__bit : int
+  
+  val function selfdrivingcar__car__gear__last__bit : int
+  
+  val function selfdrivingcar__car__gear__position : int
+  
+  axiom selfdrivingcar__car__gear__first__bit_axiom:
+    (selfdrivingcar__car__gear__first__bit >= (0 : int))
+  
+  axiom selfdrivingcar__car__gear__last__bit_axiom:
+    (selfdrivingcar__car__gear__last__bit
+       > selfdrivingcar__car__gear__first__bit)
+  
+  axiom selfdrivingcar__car__gear__position_axiom:
+    (selfdrivingcar__car__gear__position >= (0 : int))
+  
+  val function selfdrivingcar__car__switch__first__bit : int
+  
+  val function selfdrivingcar__car__switch__last__bit : int
+  
+  val function selfdrivingcar__car__switch__position : int
+  
+  axiom selfdrivingcar__car__switch__first__bit_axiom:
+    (selfdrivingcar__car__switch__first__bit >= (0 : int))
+  
+  axiom selfdrivingcar__car__switch__last__bit_axiom:
+    (selfdrivingcar__car__switch__last__bit
+       > selfdrivingcar__car__switch__first__bit)
+  
+  axiom selfdrivingcar__car__switch__position_axiom:
+    (selfdrivingcar__car__switch__position >= (0 : int))
+  
+  val function selfdrivingcar__car__battery__first__bit : int
+  
+  val function selfdrivingcar__car__battery__last__bit : int
+  
+  val function selfdrivingcar__car__battery__position : int
+  
+  axiom selfdrivingcar__car__battery__first__bit_axiom:
+    (selfdrivingcar__car__battery__first__bit >= (0 : int))
+  
+  axiom selfdrivingcar__car__battery__last__bit_axiom:
+    (selfdrivingcar__car__battery__last__bit
+       > selfdrivingcar__car__battery__first__bit)
+  
+  axiom selfdrivingcar__car__battery__position_axiom:
+    (selfdrivingcar__car__battery__position >= (0 : int))
+  
+  val function selfdrivingcar__car__speed__first__bit : int
+  
+  val function selfdrivingcar__car__speed__last__bit : int
+  
+  val function selfdrivingcar__car__speed__position : int
+  
+  axiom selfdrivingcar__car__speed__first__bit_axiom:
+    (selfdrivingcar__car__speed__first__bit >= (0 : int))
+  
+  axiom selfdrivingcar__car__speed__last__bit_axiom:
+    (selfdrivingcar__car__speed__last__bit
+       > selfdrivingcar__car__speed__first__bit)
+  
+  axiom selfdrivingcar__car__speed__position_axiom:
+    (selfdrivingcar__car__speed__position >= (0 : int))
+  
+  val function selfdrivingcar__car__sensor__first__bit : int
+  
+  val function selfdrivingcar__car__sensor__last__bit : int
+  
+  val function selfdrivingcar__car__sensor__position : int
+  
+  axiom selfdrivingcar__car__sensor__first__bit_axiom:
+    (selfdrivingcar__car__sensor__first__bit >= (0 : int))
+  
+  axiom selfdrivingcar__car__sensor__last__bit_axiom:
+    (selfdrivingcar__car__sensor__last__bit
+       > selfdrivingcar__car__sensor__first__bit)
+  
+  axiom selfdrivingcar__car__sensor__position_axiom:
+    (selfdrivingcar__car__sensor__position >= (0 : int))
+  
+  val function selfdrivingcar__car__diagnostic__first__bit : int
+  
+  val function selfdrivingcar__car__diagnostic__last__bit : int
+  
+  val function selfdrivingcar__car__diagnostic__position : int
+  
+  axiom selfdrivingcar__car__diagnostic__first__bit_axiom:
+    (selfdrivingcar__car__diagnostic__first__bit >= (0 : int))
+  
+  axiom selfdrivingcar__car__diagnostic__last__bit_axiom:
+    (selfdrivingcar__car__diagnostic__last__bit
+       > selfdrivingcar__car__diagnostic__first__bit)
+  
+  axiom selfdrivingcar__car__diagnostic__position_axiom:
+    (selfdrivingcar__car__diagnostic__position >= (0 : int))
+  
+  val function selfdrivingcar__car__charge__first__bit : int
+  
+  val function selfdrivingcar__car__charge__last__bit : int
+  
+  val function selfdrivingcar__car__charge__position : int
+  
+  axiom selfdrivingcar__car__charge__first__bit_axiom:
+    (selfdrivingcar__car__charge__first__bit >= (0 : int))
+  
+  axiom selfdrivingcar__car__charge__last__bit_axiom:
+    (selfdrivingcar__car__charge__last__bit
+       > selfdrivingcar__car__charge__first__bit)
+  
+  axiom selfdrivingcar__car__charge__position_axiom:
+    (selfdrivingcar__car__charge__position >= (0 : int))
+  
+  val function selfdrivingcar__car__signal__first__bit : int
+  
+  val function selfdrivingcar__car__signal__last__bit : int
+  
+  val function selfdrivingcar__car__signal__position : int
+  
+  axiom selfdrivingcar__car__signal__first__bit_axiom:
+    (selfdrivingcar__car__signal__first__bit >= (0 : int))
+  
+  axiom selfdrivingcar__car__signal__last__bit_axiom:
+    (selfdrivingcar__car__signal__last__bit
+       > selfdrivingcar__car__signal__first__bit)
+  
+  axiom selfdrivingcar__car__signal__position_axiom:
+    (selfdrivingcar__car__signal__position >= (0 : int))
+  
+  val function user_eq (a: car) (b: car) : bool
+  
+  val function dummy : car
+  
+  type car__ref = { mutable car__content : car }
+  
+  function car__ref_car__content__projection (a: car__ref) : car =
+    a.car__content
+  
+  meta "model_projection" function car__ref_car__content__projection
+  
+  meta "inline:no" function car__ref_car__content__projection
+  
+  val car__havoc (x: car__ref) : unit
+    writes { x }
+end
+
+module Selfdrivingcar__thecar
+  use _gnatprove_standard.Main
+  use int.Int
+  use Selfdrivingcar__car as Selfdrivingcar__car
+  
+  val thecar__split_fields : Selfdrivingcar__car.__split_fields__ref
+end
+
+module Selfdrivingcar__car___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Selfdrivingcar__car as Selfdrivingcar__car
+  
+  predicate dynamic_invariant (temp___expr_223: Selfdrivingcar__car.car) (temp___is_init_219: bool) (temp___skip_constant_220: bool) (temp___do_toplevel_221: bool) (temp___do_typ_inv_222: bool) =
+    true
+  
+  val dynamic_invariant (temp___expr_223: Selfdrivingcar__car.car) (temp___is_init_219: bool) (temp___skip_constant_220: bool) (temp___do_toplevel_221: bool) (temp___do_typ_inv_222: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_223 : Selfdrivingcar__car.car))
+                      (temp___is_init_219 : bool))
+                     (temp___skip_constant_220 : bool))
+                    (temp___do_toplevel_221 : bool))
+                   (temp___do_typ_inv_222 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_224: Selfdrivingcar__car.car) (temp___skip_top_level_225: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_224: Selfdrivingcar__car.car) (temp___skip_top_level_225: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption
+                    (temp___expr_224 : Selfdrivingcar__car.car))
+                   (temp___skip_top_level_225 : bool)) }
+end
+
+module Selfdrivingcar__onoff___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Selfdrivingcar__onoff as Selfdrivingcar__onoff
+  
+  predicate dynamic_invariant (temp___expr_167: int) (temp___is_init_163: bool) (temp___skip_constant_164: bool) (temp___do_toplevel_165: bool) (temp___do_typ_inv_166: bool) =
+    if ((temp___is_init_163 = True) \/
+          (Selfdrivingcar__onoff.first <= Selfdrivingcar__onoff.last)) then
+      (((Selfdrivingcar__onoff.dynamic_property Selfdrivingcar__onoff.first)
+          Selfdrivingcar__onoff.last)
+         temp___expr_167)
+    else true
+  
+  val dynamic_invariant (temp___expr_167: int) (temp___is_init_163: bool) (temp___skip_constant_164: bool) (temp___do_toplevel_165: bool) (temp___do_typ_inv_166: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_167 : int))
+                      (temp___is_init_163 : bool))
+                     (temp___skip_constant_164 : bool))
+                    (temp___do_toplevel_165 : bool))
+                   (temp___do_typ_inv_166 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_168: int) (temp___skip_top_level_169: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_168: int) (temp___skip_top_level_169: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_168 : int))
+                   (temp___skip_top_level_169 : bool)) }
+end
+
+module Selfdrivingcar__gearbox___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Selfdrivingcar__gearbox as Selfdrivingcar__gearbox
+  
+  predicate dynamic_invariant (temp___expr_174: int) (temp___is_init_170: bool) (temp___skip_constant_171: bool) (temp___do_toplevel_172: bool) (temp___do_typ_inv_173: bool) =
+    if ((temp___is_init_170 = True) \/
+          (Selfdrivingcar__gearbox.first <= Selfdrivingcar__gearbox.last)) then
+      (((Selfdrivingcar__gearbox.dynamic_property
+           Selfdrivingcar__gearbox.first)
+          Selfdrivingcar__gearbox.last)
+         temp___expr_174)
+    else true
+  
+  val dynamic_invariant (temp___expr_174: int) (temp___is_init_170: bool) (temp___skip_constant_171: bool) (temp___do_toplevel_172: bool) (temp___do_typ_inv_173: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_174 : int))
+                      (temp___is_init_170 : bool))
+                     (temp___skip_constant_171 : bool))
+                    (temp___do_toplevel_172 : bool))
+                   (temp___do_typ_inv_173 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_175: int) (temp___skip_top_level_176: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_175: int) (temp___skip_top_level_176: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_175 : int))
+                   (temp___skip_top_level_176 : bool)) }
+end
+
+module Selfdrivingcar__chargelevel___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Selfdrivingcar__chargelevel as Selfdrivingcar__chargelevel
+  
+  predicate dynamic_invariant (temp___expr_181: int) (temp___is_init_177: bool) (temp___skip_constant_178: bool) (temp___do_toplevel_179: bool) (temp___do_typ_inv_180: bool) =
+    if ((temp___is_init_177 = True) \/
+          (Selfdrivingcar__chargelevel.first
+             <= Selfdrivingcar__chargelevel.last)) then
+      (((Selfdrivingcar__chargelevel.dynamic_property
+           Selfdrivingcar__chargelevel.first)
+          Selfdrivingcar__chargelevel.last)
+         temp___expr_181)
+    else true
+  
+  val dynamic_invariant (temp___expr_181: int) (temp___is_init_177: bool) (temp___skip_constant_178: bool) (temp___do_toplevel_179: bool) (temp___do_typ_inv_180: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_181 : int))
+                      (temp___is_init_177 : bool))
+                     (temp___skip_constant_178 : bool))
+                    (temp___do_toplevel_179 : bool))
+                   (temp___do_typ_inv_180 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_182: int) (temp___skip_top_level_183: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_182: int) (temp___skip_top_level_183: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_182 : int))
+                   (temp___skip_top_level_183 : bool)) }
+end
+
+module Selfdrivingcar__carspeed___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Selfdrivingcar__carspeed as Selfdrivingcar__carspeed
+  
+  predicate dynamic_invariant (temp___expr_188: int) (temp___is_init_184: bool) (temp___skip_constant_185: bool) (temp___do_toplevel_186: bool) (temp___do_typ_inv_187: bool) =
+    if ((temp___is_init_184 = True) \/
+          (Selfdrivingcar__carspeed.first <= Selfdrivingcar__carspeed.last)) then
+      (((Selfdrivingcar__carspeed.dynamic_property
+           Selfdrivingcar__carspeed.first)
+          Selfdrivingcar__carspeed.last)
+         temp___expr_188)
+    else true
+  
+  val dynamic_invariant (temp___expr_188: int) (temp___is_init_184: bool) (temp___skip_constant_185: bool) (temp___do_toplevel_186: bool) (temp___do_typ_inv_187: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_188 : int))
+                      (temp___is_init_184 : bool))
+                     (temp___skip_constant_185 : bool))
+                    (temp___do_toplevel_186 : bool))
+                   (temp___do_typ_inv_187 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_189: int) (temp___skip_top_level_190: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_189: int) (temp___skip_top_level_190: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_189 : int))
+                   (temp___skip_top_level_190 : bool)) }
+end
+
+module Selfdrivingcar__object___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Selfdrivingcar__object as Selfdrivingcar__object
+  
+  predicate dynamic_invariant (temp___expr_195: int) (temp___is_init_191: bool) (temp___skip_constant_192: bool) (temp___do_toplevel_193: bool) (temp___do_typ_inv_194: bool) =
+    if ((temp___is_init_191 = True) \/
+          (Selfdrivingcar__object.first <= Selfdrivingcar__object.last)) then
+      (((Selfdrivingcar__object.dynamic_property Selfdrivingcar__object.first)
+          Selfdrivingcar__object.last)
+         temp___expr_195)
+    else true
+  
+  val dynamic_invariant (temp___expr_195: int) (temp___is_init_191: bool) (temp___skip_constant_192: bool) (temp___do_toplevel_193: bool) (temp___do_typ_inv_194: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_195 : int))
+                      (temp___is_init_191 : bool))
+                     (temp___skip_constant_192 : bool))
+                    (temp___do_toplevel_193 : bool))
+                   (temp___do_typ_inv_194 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_196: int) (temp___skip_top_level_197: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_196: int) (temp___skip_top_level_197: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_196 : int))
+                   (temp___skip_top_level_197 : bool)) }
+end
+
+module Selfdrivingcar__diagnosticmode___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Selfdrivingcar__diagnosticmode as Selfdrivingcar__diagnosticmode
+  
+  predicate dynamic_invariant (temp___expr_202: int) (temp___is_init_198: bool) (temp___skip_constant_199: bool) (temp___do_toplevel_200: bool) (temp___do_typ_inv_201: bool) =
+    if ((temp___is_init_198 = True) \/
+          (Selfdrivingcar__diagnosticmode.first
+             <= Selfdrivingcar__diagnosticmode.last)) then
+      (((Selfdrivingcar__diagnosticmode.dynamic_property
+           Selfdrivingcar__diagnosticmode.first)
+          Selfdrivingcar__diagnosticmode.last)
+         temp___expr_202)
+    else true
+  
+  val dynamic_invariant (temp___expr_202: int) (temp___is_init_198: bool) (temp___skip_constant_199: bool) (temp___do_toplevel_200: bool) (temp___do_typ_inv_201: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_202 : int))
+                      (temp___is_init_198 : bool))
+                     (temp___skip_constant_199 : bool))
+                    (temp___do_toplevel_200 : bool))
+                   (temp___do_typ_inv_201 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_203: int) (temp___skip_top_level_204: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_203: int) (temp___skip_top_level_204: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_203 : int))
+                   (temp___skip_top_level_204 : bool)) }
+end
+
+module Selfdrivingcar__chargestate___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Selfdrivingcar__chargestate as Selfdrivingcar__chargestate
+  
+  predicate dynamic_invariant (temp___expr_209: int) (temp___is_init_205: bool) (temp___skip_constant_206: bool) (temp___do_toplevel_207: bool) (temp___do_typ_inv_208: bool) =
+    if ((temp___is_init_205 = True) \/
+          (Selfdrivingcar__chargestate.first
+             <= Selfdrivingcar__chargestate.last)) then
+      (((Selfdrivingcar__chargestate.dynamic_property
+           Selfdrivingcar__chargestate.first)
+          Selfdrivingcar__chargestate.last)
+         temp___expr_209)
+    else true
+  
+  val dynamic_invariant (temp___expr_209: int) (temp___is_init_205: bool) (temp___skip_constant_206: bool) (temp___do_toplevel_207: bool) (temp___do_typ_inv_208: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_209 : int))
+                      (temp___is_init_205 : bool))
+                     (temp___skip_constant_206 : bool))
+                    (temp___do_toplevel_207 : bool))
+                   (temp___do_typ_inv_208 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_210: int) (temp___skip_top_level_211: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_210: int) (temp___skip_top_level_211: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_210 : int))
+                   (temp___skip_top_level_211 : bool)) }
+end
+
+module Selfdrivingcar__trafficlight___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Selfdrivingcar__trafficlight as Selfdrivingcar__trafficlight
+  
+  predicate dynamic_invariant (temp___expr_216: int) (temp___is_init_212: bool) (temp___skip_constant_213: bool) (temp___do_toplevel_214: bool) (temp___do_typ_inv_215: bool) =
+    if ((temp___is_init_212 = True) \/
+          (Selfdrivingcar__trafficlight.first
+             <= Selfdrivingcar__trafficlight.last)) then
+      (((Selfdrivingcar__trafficlight.dynamic_property
+           Selfdrivingcar__trafficlight.first)
+          Selfdrivingcar__trafficlight.last)
+         temp___expr_216)
+    else true
+  
+  val dynamic_invariant (temp___expr_216: int) (temp___is_init_212: bool) (temp___skip_constant_213: bool) (temp___do_toplevel_214: bool) (temp___do_typ_inv_215: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_216 : int))
+                      (temp___is_init_212 : bool))
+                     (temp___skip_constant_213 : bool))
+                    (temp___do_toplevel_214 : bool))
+                   (temp___do_typ_inv_215 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_217: int) (temp___skip_top_level_218: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_217: int) (temp___skip_top_level_218: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_217 : int))
+                   (temp___skip_top_level_218 : bool)) }
+end
+
+module Selfdrivingcar__thecar___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Selfdrivingcar__changegear__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use _gnatprove_standard.Boolean as Boolean
+  use Selfdrivingcar__thecar as Selfdrivingcar__thecar
+  use Selfdrivingcar__car as Selfdrivingcar__car
+  use Selfdrivingcar__car___axiom as Selfdrivingcar__car___axiom
+  use Selfdrivingcar__gearbox as Selfdrivingcar__gearbox
+  use Selfdrivingcar__gearbox__rep as Selfdrivingcar__gearbox__rep
+  use Selfdrivingcar__carspeed as Selfdrivingcar__carspeed
+  use Selfdrivingcar__carspeed__rep as Selfdrivingcar__carspeed__rep
+  use Selfdrivingcar__onoff___axiom as Selfdrivingcar__onoff___axiom
+  use Selfdrivingcar__gearbox___axiom as Selfdrivingcar__gearbox___axiom
+  use Selfdrivingcar__chargelevel___axiom as Selfdrivingcar__chargelevel___axiom
+  use Selfdrivingcar__carspeed___axiom as Selfdrivingcar__carspeed___axiom
+  use Selfdrivingcar__object___axiom as Selfdrivingcar__object___axiom
+  use Selfdrivingcar__diagnosticmode___axiom as Selfdrivingcar__diagnosticmode___axiom
+  use Selfdrivingcar__chargestate___axiom as Selfdrivingcar__chargestate___axiom
+  use Selfdrivingcar__trafficlight___axiom as Selfdrivingcar__trafficlight___axiom
+  use Selfdrivingcar__car___axiom as Selfdrivingcar__car___axiom
+  use Selfdrivingcar__thecar___axiom as Selfdrivingcar__thecar___axiom
+  
+  let def (__void_param : unit)
+    requires { [#"selfdrivingcar.ads" 62 0 0] true }
+    ensures { [#"selfdrivingcar.ads" 62 0 0]
+              [#"selfdrivingcar.ads" 65 0 0]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@GP_Shape:pragargs__cmp]
+              [@comment:     Post => TheCar.gear = Drive;              ^ selfdrivingcar.ads:65:14:VC_POSTCONDITION]
+              [@model_vc_post]
+              [@GP_Sloc:selfdrivingcar.ads:65:14]
+              [@GP_Id:6]
+              [@GP_Pretty_Ada:1740]
+              [@GP_Sloc:selfdrivingcar.ads:65:14]
+              ((Selfdrivingcar__gearbox__rep.to_rep
+                  ((Selfdrivingcar__car.__split_fields
+                       { Selfdrivingcar__car.__split_fields =
+                           (Selfdrivingcar__car.__split_fields__content
+                               Selfdrivingcar__thecar.thecar__split_fields) }).
+                     Selfdrivingcar__car.rec__selfdrivingcar__car__gear))
+                 = (1 : int)) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram selfdrivingcar.ads:62]
+      ());
+     assume {
+       ((((Selfdrivingcar__car___axiom.dynamic_invariant
+             { Selfdrivingcar__car.__split_fields =
+                 (Selfdrivingcar__car.__split_fields__content
+                     Selfdrivingcar__thecar.thecar__split_fields) })
+            True)
+           False)
+          True)
+         True };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram selfdrivingcar.ads:62]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram selfdrivingcar.ads:62]
+      ());
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            (Boolean.andb
+               ((Selfdrivingcar__carspeed__rep.to_rep
+                   ((Selfdrivingcar__car.__split_fields
+                        { Selfdrivingcar__car.__split_fields =
+                            (Selfdrivingcar__car.__split_fields__content
+                                Selfdrivingcar__thecar.thecar__split_fields) }).
+                      Selfdrivingcar__car.rec__selfdrivingcar__car__speed))
+                  = (0 : int)))
+              ((Selfdrivingcar__gearbox__rep.to_rep
+                  ((Selfdrivingcar__car.__split_fields
+                       { Selfdrivingcar__car.__split_fields =
+                           (Selfdrivingcar__car.__split_fields__content
+                               Selfdrivingcar__thecar.thecar__split_fields) }).
+                     Selfdrivingcar__car.rec__selfdrivingcar__car__gear))
+                 = (0 : int)) in
+          () in
+        ()
+      end);
+     ([@GNAT-comment:Assume Pre of the subprogram selfdrivingcar.ads:62] ());
+     assume {
+       (([@GP_Pretty_Ada:1337]
+         ((Selfdrivingcar__carspeed__rep.to_rep
+             ((Selfdrivingcar__car.__split_fields
+                  { Selfdrivingcar__car.__split_fields =
+                      (Selfdrivingcar__car.__split_fields__content
+                          Selfdrivingcar__thecar.thecar__split_fields) }).
+                Selfdrivingcar__car.rec__selfdrivingcar__car__speed))
+            = (0 : int))) /\
+          ([@GP_Pretty_Ada:1343]
+           ((Selfdrivingcar__gearbox__rep.to_rep
+               ((Selfdrivingcar__car.__split_fields
+                    { Selfdrivingcar__car.__split_fields =
+                        (Selfdrivingcar__car.__split_fields__content
+                            Selfdrivingcar__thecar.thecar__split_fields) }).
+                  Selfdrivingcar__car.rec__selfdrivingcar__car__gear))
+              = (0 : int)))) };
+     (try
+        ([@GP_Sloc:selfdrivingcar.adb:50:11]
+         [#"selfdrivingcar.adb" 50 0 0] ());
+        ([@GP_Sloc:selfdrivingcar.adb:50:32]
+         [#"selfdrivingcar.adb" 50 0 0] ());
+        ([@GP_Sloc:selfdrivingcar.adb:50:7]
+         [#"selfdrivingcar.adb" 50 0 0]
+         (if (([#"selfdrivingcar.adb" 50 0 0]
+               [#"selfdrivingcar.adb" 50 0 0]
+               (([@branch_id=961] Main.spark__branch).bool__content <-
+                  ((Boolean.andb
+                      ((Selfdrivingcar__carspeed__rep.to_rep
+                          ((Selfdrivingcar__car.__split_fields
+                               { Selfdrivingcar__car.__split_fields =
+                                   (Selfdrivingcar__car.__split_fields__content
+                                       Selfdrivingcar__thecar.thecar__split_fields) }).
+                             Selfdrivingcar__car.rec__selfdrivingcar__car__speed))
+                         = (0 : int)))
+                     ((Selfdrivingcar__gearbox__rep.to_rep
+                         ((Selfdrivingcar__car.__split_fields
+                              { Selfdrivingcar__car.__split_fields =
+                                  (Selfdrivingcar__car.__split_fields__content
+                                      Selfdrivingcar__thecar.thecar__split_fields) }).
+                            Selfdrivingcar__car.rec__selfdrivingcar__car__gear))
+                        = (0 : int)))));
+              (([@branch_id=961] Main.spark__branch).bool__content)) then
+            (([@GP_Sloc:selfdrivingcar.adb:51:12]
+              [#"selfdrivingcar.adb" 51 0 0] ());
+             ([@GP_Sloc:selfdrivingcar.adb:51:24]
+              [#"selfdrivingcar.adb" 51 0 0]
+              (let temp___274 =
+                 let temp___273 =
+                   { Selfdrivingcar__car.__split_fields =
+                       (Selfdrivingcar__car.__split_fields__content
+                           Selfdrivingcar__thecar.thecar__split_fields) } in
+                 ([#"selfdrivingcar.adb" 51 0 0]
+                  (begin
+                     ensures { true }
+                     let _ =
+                       let _ =
+                         (Selfdrivingcar__car.__split_fields temp___273).
+                           Selfdrivingcar__car.rec__selfdrivingcar__car__gear in
+                       () in
+                     ()
+                   end));
+                 ({ temp___273 with
+                    Selfdrivingcar__car.__split_fields =
+                      ({ (Selfdrivingcar__car.__split_fields temp___273) with
+                         Selfdrivingcar__car.rec__selfdrivingcar__car__gear =
+                           (Selfdrivingcar__gearbox__rep.of_rep (1 : int)) }) }) in
+               [#"selfdrivingcar.adb" 51 0 0]
+               (Selfdrivingcar__thecar.thecar__split_fields.Selfdrivingcar__car.__split_fields__content <-
+                  (Selfdrivingcar__car.__split_fields temp___274)))))
+          else ()));
+        (raise Return__exc)
+      with Return__exc -> ()
+      end);
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            ((Selfdrivingcar__gearbox__rep.to_rep
+                ((Selfdrivingcar__car.__split_fields
+                     { Selfdrivingcar__car.__split_fields =
+                         (Selfdrivingcar__car.__split_fields__content
+                             Selfdrivingcar__thecar.thecar__split_fields) }).
+                   Selfdrivingcar__car.rec__selfdrivingcar__car__gear))
+               = (1 : int)) in
+          () in
+        ()
+      end))
+end

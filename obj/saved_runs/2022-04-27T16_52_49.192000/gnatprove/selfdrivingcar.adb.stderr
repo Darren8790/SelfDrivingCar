@@ -1,0 +1,2 @@
+selfdrivingcar.ads:53:14: medium: postcondition might fail[#1]
+selfdrivingcar.ads:63:14: medium: postcondition might fail[#0]

@@ -1,0 +1,1217 @@
+(* Module for axiomatizing type "onoff" defined at selfdrivingcar.ads:3, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__onoff
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type onoff  
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns int = 1
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = onoff,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type onoff__ref  = { mutable onoff__content : onoff }
+  
+  function   onoff__ref_onoff__content__projection (a : onoff__ref) requires
+    {  } ensures  {  } returns onoff = a.onoff__content
+  
+  meta model_projection function onoff__ref_onoff__content__projection
+  
+  meta inline:no function onoff__ref_onoff__content__projection
+  
+  function   onoff__havoc (x : onoff__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module defining to_rep/of_rep for type "onoff" defined at selfdrivingcar.ads:3, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__onoff__rep
+  
+  use        Selfdrivingcar__onoff
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Selfdrivingcar__onoff.onoff,
+    predicate in_range = Selfdrivingcar__onoff.in_range
+  
+  meta model_projection function to_rep
+  
+  meta inline:no function to_rep
+
+end
+
+(* Module for axiomatizing type "gearbox" defined at selfdrivingcar.ads:4, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__gearbox
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type gearbox  
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns int = 2
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = gearbox,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type gearbox__ref  = { mutable gearbox__content : gearbox }
+  
+  function   gearbox__ref_gearbox__content__projection (a : gearbox__ref)
+    requires {  } ensures  {  } returns gearbox = a.gearbox__content
+  
+  meta model_projection function gearbox__ref_gearbox__content__projection
+  
+  meta inline:no function gearbox__ref_gearbox__content__projection
+  
+  function   gearbox__havoc (x : gearbox__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module defining to_rep/of_rep for type "gearbox" defined at selfdrivingcar.ads:4, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__gearbox__rep
+  
+  use        Selfdrivingcar__gearbox
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Selfdrivingcar__gearbox.gearbox,
+    predicate in_range = Selfdrivingcar__gearbox.in_range
+  
+  meta model_projection function to_rep
+  
+  meta inline:no function to_rep
+
+end
+
+(* Module for axiomatizing type "chargelevel" defined at selfdrivingcar.ads:5, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__chargelevel
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type chargelevel  = <range 0 100>
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns int = 100
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = chargelevel,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type chargelevel__ref  = { mutable chargelevel__content : chargelevel }
+  
+  function   chargelevel__ref_chargelevel__content__projection
+    (a : chargelevel__ref) requires {  } ensures  {  } returns
+    chargelevel = a.chargelevel__content
+  
+  meta model_projection function chargelevel__ref_chargelevel__content__projection
+  
+  meta inline:no function chargelevel__ref_chargelevel__content__projection
+  
+  function   chargelevel__havoc (x : chargelevel__ref) requires {  } ensures 
+    {  } returns unit
+
+end
+
+(* Module defining to_rep/of_rep for type "chargelevel" defined at selfdrivingcar.ads:5, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__chargelevel__rep
+  
+  use        Selfdrivingcar__chargelevel
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function   to_rep (x : Selfdrivingcar__chargelevel.chargelevel) requires
+    { True } ensures  { True } returns
+    int = (Selfdrivingcar__chargelevel.chargelevel'int x)
+  
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Selfdrivingcar__chargelevel.chargelevel,
+    predicate in_range = Selfdrivingcar__chargelevel.in_range,
+    function to_rep = to_rep
+  
+  meta model_projection function to_rep
+  
+  meta inline:no function to_rep
+
+end
+
+(* Module for axiomatizing type "carspeed" defined at selfdrivingcar.ads:6, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__carspeed
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type carspeed  = <range 0 100>
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns int = 100
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = carspeed,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type carspeed__ref  = { mutable carspeed__content : carspeed }
+  
+  function   carspeed__ref_carspeed__content__projection (a : carspeed__ref)
+    requires {  } ensures  {  } returns carspeed = a.carspeed__content
+  
+  meta model_projection function carspeed__ref_carspeed__content__projection
+  
+  meta inline:no function carspeed__ref_carspeed__content__projection
+  
+  function   carspeed__havoc (x : carspeed__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module defining to_rep/of_rep for type "carspeed" defined at selfdrivingcar.ads:6, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__carspeed__rep
+  
+  use        Selfdrivingcar__carspeed
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function   to_rep (x : Selfdrivingcar__carspeed.carspeed) requires { True }
+    ensures  { True } returns int = (Selfdrivingcar__carspeed.carspeed'int x)
+  
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Selfdrivingcar__carspeed.carspeed,
+    predicate in_range = Selfdrivingcar__carspeed.in_range,
+    function to_rep = to_rep
+  
+  meta model_projection function to_rep
+  
+  meta inline:no function to_rep
+
+end
+
+(* Module for axiomatizing type "object" defined at selfdrivingcar.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__object
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type object  
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns int = 1
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = object,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type object__ref  = { mutable object__content : object }
+  
+  function   object__ref_object__content__projection (a : object__ref)
+    requires {  } ensures  {  } returns object = a.object__content
+  
+  meta model_projection function object__ref_object__content__projection
+  
+  meta inline:no function object__ref_object__content__projection
+  
+  function   object__havoc (x : object__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module defining to_rep/of_rep for type "object" defined at selfdrivingcar.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__object__rep
+  
+  use        Selfdrivingcar__object
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Selfdrivingcar__object.object,
+    predicate in_range = Selfdrivingcar__object.in_range
+  
+  meta model_projection function to_rep
+  
+  meta inline:no function to_rep
+
+end
+
+(* Module for axiomatizing type "diagnosticmode" defined at selfdrivingcar.ads:8, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__diagnosticmode
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type diagnosticmode  
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns int = 1
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = diagnosticmode,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type diagnosticmode__ref  = { mutable diagnosticmode__content : diagnosticmode }
+  
+  function   diagnosticmode__ref_diagnosticmode__content__projection
+    (a : diagnosticmode__ref) requires {  } ensures  {  } returns
+    diagnosticmode = a.diagnosticmode__content
+  
+  meta model_projection function diagnosticmode__ref_diagnosticmode__content__projection
+  
+  meta inline:no function diagnosticmode__ref_diagnosticmode__content__projection
+  
+  function   diagnosticmode__havoc (x : diagnosticmode__ref) requires {  }
+    ensures  {  } returns unit
+
+end
+
+(* Module defining to_rep/of_rep for type "diagnosticmode" defined at selfdrivingcar.ads:8, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__diagnosticmode__rep
+  
+  use        Selfdrivingcar__diagnosticmode
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Selfdrivingcar__diagnosticmode.diagnosticmode,
+    predicate in_range = Selfdrivingcar__diagnosticmode.in_range
+  
+  meta model_projection function to_rep
+  
+  meta inline:no function to_rep
+
+end
+
+(* Module for axiomatizing type "chargestate" defined at selfdrivingcar.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__chargestate
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type chargestate  
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns int = 2
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = chargestate,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type chargestate__ref  = { mutable chargestate__content : chargestate }
+  
+  function   chargestate__ref_chargestate__content__projection
+    (a : chargestate__ref) requires {  } ensures  {  } returns
+    chargestate = a.chargestate__content
+  
+  meta model_projection function chargestate__ref_chargestate__content__projection
+  
+  meta inline:no function chargestate__ref_chargestate__content__projection
+  
+  function   chargestate__havoc (x : chargestate__ref) requires {  } ensures 
+    {  } returns unit
+
+end
+
+(* Module defining to_rep/of_rep for type "chargestate" defined at selfdrivingcar.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__chargestate__rep
+  
+  use        Selfdrivingcar__chargestate
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Selfdrivingcar__chargestate.chargestate,
+    predicate in_range = Selfdrivingcar__chargestate.in_range
+  
+  meta model_projection function to_rep
+  
+  meta inline:no function to_rep
+
+end
+
+(* Module for axiomatizing the record theory associated to type "car" defined at selfdrivingcar.ads:14, created in Why.Gen.Records.Create_Rep_Record_Theory_If_Needed *)
+module Selfdrivingcar__car__rep
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Selfdrivingcar__onoff
+  use        Selfdrivingcar__onoff__rep
+  use        Selfdrivingcar__gearbox
+  use        Selfdrivingcar__gearbox__rep
+  use        Selfdrivingcar__chargelevel
+  use        Selfdrivingcar__chargelevel__rep
+  use        Selfdrivingcar__carspeed
+  use        Selfdrivingcar__carspeed__rep
+  use        Selfdrivingcar__object
+  use        Selfdrivingcar__object__rep
+  use        Selfdrivingcar__diagnosticmode
+  use        Selfdrivingcar__diagnosticmode__rep
+  use        Selfdrivingcar__chargestate
+  use        Selfdrivingcar__chargestate__rep
+  
+  type __split_fields  = { [name:gear]
+                           [model_trace:.1036]rec__selfdrivingcar__car__gear : Selfdrivingcar__gearbox.gearbox;
+                           [model_trace:.1041]
+                           [name:switch]rec__selfdrivingcar__car__switch : Selfdrivingcar__onoff.onoff;
+                           [model_trace:.1045]
+                           [name:battery]rec__selfdrivingcar__car__battery : Selfdrivingcar__chargelevel.chargelevel;
+                           [model_trace:.1049]
+                           [name:speed]rec__selfdrivingcar__car__speed : Selfdrivingcar__carspeed.carspeed;
+                           [name:sensor]
+                           [model_trace:.1053]rec__selfdrivingcar__car__sensor : Selfdrivingcar__object.object;
+                           [name:diagnostic]
+                           [model_trace:.1057]rec__selfdrivingcar__car__diagnostic : Selfdrivingcar__diagnosticmode.diagnosticmode;
+                           [name:charge]
+                           [model_trace:.1061]rec__selfdrivingcar__car__charge : Selfdrivingcar__chargestate.chargestate }
+  
+  function [name:gear] [model_trace:.1036] 
+    __split_fields_rec__selfdrivingcar__car__gear__projection
+    (a : __split_fields) requires {  } ensures  {  } returns
+    Selfdrivingcar__gearbox.gearbox = a.rec__selfdrivingcar__car__gear
+  
+  meta model_projection function __split_fields_rec__selfdrivingcar__car__gear__projection
+  
+  meta inline:no function __split_fields_rec__selfdrivingcar__car__gear__projection
+  
+  function [model_trace:.1041] [name:switch] 
+    __split_fields_rec__selfdrivingcar__car__switch__projection
+    (a : __split_fields) requires {  } ensures  {  } returns
+    Selfdrivingcar__onoff.onoff = a.rec__selfdrivingcar__car__switch
+  
+  meta model_projection function __split_fields_rec__selfdrivingcar__car__switch__projection
+  
+  meta inline:no function __split_fields_rec__selfdrivingcar__car__switch__projection
+  
+  function [model_trace:.1045] [name:battery] 
+    __split_fields_rec__selfdrivingcar__car__battery__projection
+    (a : __split_fields) requires {  } ensures  {  } returns
+    Selfdrivingcar__chargelevel.chargelevel = a.rec__selfdrivingcar__car__battery
+  
+  meta model_projection function __split_fields_rec__selfdrivingcar__car__battery__projection
+  
+  meta inline:no function __split_fields_rec__selfdrivingcar__car__battery__projection
+  
+  function [model_trace:.1049] [name:speed] 
+    __split_fields_rec__selfdrivingcar__car__speed__projection
+    (a : __split_fields) requires {  } ensures  {  } returns
+    Selfdrivingcar__carspeed.carspeed = a.rec__selfdrivingcar__car__speed
+  
+  meta model_projection function __split_fields_rec__selfdrivingcar__car__speed__projection
+  
+  meta inline:no function __split_fields_rec__selfdrivingcar__car__speed__projection
+  
+  function [name:sensor] [model_trace:.1053] 
+    __split_fields_rec__selfdrivingcar__car__sensor__projection
+    (a : __split_fields) requires {  } ensures  {  } returns
+    Selfdrivingcar__object.object = a.rec__selfdrivingcar__car__sensor
+  
+  meta model_projection function __split_fields_rec__selfdrivingcar__car__sensor__projection
+  
+  meta inline:no function __split_fields_rec__selfdrivingcar__car__sensor__projection
+  
+  function [name:diagnostic] [model_trace:.1057] 
+    __split_fields_rec__selfdrivingcar__car__diagnostic__projection
+    (a : __split_fields) requires {  } ensures  {  } returns
+    Selfdrivingcar__diagnosticmode.diagnosticmode = a.rec__selfdrivingcar__car__diagnostic
+  
+  meta model_projection function __split_fields_rec__selfdrivingcar__car__diagnostic__projection
+  
+  meta inline:no function __split_fields_rec__selfdrivingcar__car__diagnostic__projection
+  
+  function [name:charge] [model_trace:.1061] 
+    __split_fields_rec__selfdrivingcar__car__charge__projection
+    (a : __split_fields) requires {  } ensures  {  } returns
+    Selfdrivingcar__chargestate.chargestate = a.rec__selfdrivingcar__car__charge
+  
+  meta model_projection function __split_fields_rec__selfdrivingcar__car__charge__projection
+  
+  meta inline:no function __split_fields_rec__selfdrivingcar__car__charge__projection
+  
+  type __split_fields__ref  = { mutable __split_fields__content : __split_fields }
+  
+  function   __split_fields__ref___split_fields__content__projection
+    (a : __split_fields__ref) requires {  } ensures  {  } returns
+    __split_fields = a.__split_fields__content
+  
+  meta model_projection function __split_fields__ref___split_fields__content__projection
+  
+  meta inline:no function __split_fields__ref___split_fields__content__projection
+  
+  function   __split_fields__havoc (x : __split_fields__ref) requires {  }
+    ensures  {  } returns unit
+  
+  type __rep  = { __split_fields : __split_fields }
+  
+  function   __rep___split_fields__projection (a : __rep) requires {  }
+    ensures  {  } returns __split_fields = a.__split_fields
+  
+  meta model_projection function __rep___split_fields__projection
+  
+  meta inline:no function __rep___split_fields__projection
+  
+  function   to_base (a : __rep) requires { True } ensures  { True } returns
+    __rep = a
+  
+  function   of_base (a : __rep) requires { True } ensures  { True } returns
+    __rep = a
+  
+  function   selfdrivingcar__car__gear__pred (a : __rep) requires { True }
+    ensures  { True } returns  = True
+  
+  function   rec__selfdrivingcar__car__gear_ (a : __rep) requires
+    { (selfdrivingcar__car__gear__pred a) } ensures 
+    { (result = a.__split_fields.rec__selfdrivingcar__car__gear) } returns
+    Selfdrivingcar__gearbox.gearbox
+  
+  function   selfdrivingcar__car__switch__pred (a : __rep) requires { True }
+    ensures  { True } returns  = True
+  
+  function   rec__selfdrivingcar__car__switch_ (a : __rep) requires
+    { (selfdrivingcar__car__switch__pred a) } ensures 
+    { (result = a.__split_fields.rec__selfdrivingcar__car__switch) } returns
+    Selfdrivingcar__onoff.onoff
+  
+  function   selfdrivingcar__car__battery__pred (a : __rep) requires { True }
+    ensures  { True } returns  = True
+  
+  function   rec__selfdrivingcar__car__battery_ (a : __rep) requires
+    { (selfdrivingcar__car__battery__pred a) } ensures 
+    { (result = a.__split_fields.rec__selfdrivingcar__car__battery) } returns
+    Selfdrivingcar__chargelevel.chargelevel
+  
+  function   selfdrivingcar__car__speed__pred (a : __rep) requires { True }
+    ensures  { True } returns  = True
+  
+  function   rec__selfdrivingcar__car__speed_ (a : __rep) requires
+    { (selfdrivingcar__car__speed__pred a) } ensures 
+    { (result = a.__split_fields.rec__selfdrivingcar__car__speed) } returns
+    Selfdrivingcar__carspeed.carspeed
+  
+  function   selfdrivingcar__car__sensor__pred (a : __rep) requires { True }
+    ensures  { True } returns  = True
+  
+  function   rec__selfdrivingcar__car__sensor_ (a : __rep) requires
+    { (selfdrivingcar__car__sensor__pred a) } ensures 
+    { (result = a.__split_fields.rec__selfdrivingcar__car__sensor) } returns
+    Selfdrivingcar__object.object
+  
+  function   selfdrivingcar__car__diagnostic__pred (a : __rep) requires
+    { True } ensures  { True } returns  = True
+  
+  function   rec__selfdrivingcar__car__diagnostic_ (a : __rep) requires
+    { (selfdrivingcar__car__diagnostic__pred a) } ensures 
+    { (result = a.__split_fields.rec__selfdrivingcar__car__diagnostic) }
+    returns Selfdrivingcar__diagnosticmode.diagnosticmode
+  
+  function   selfdrivingcar__car__charge__pred (a : __rep) requires { True }
+    ensures  { True } returns  = True
+  
+  function   rec__selfdrivingcar__car__charge_ (a : __rep) requires
+    { (selfdrivingcar__car__charge__pred a) } ensures 
+    { (result = a.__split_fields.rec__selfdrivingcar__car__charge) } returns
+    Selfdrivingcar__chargestate.chargestate
+  
+  function   bool_eq (a : __rep b : __rep) requires { True } ensures 
+    { True } returns
+    bool = (if
+           (((Selfdrivingcar__gearbox__rep.to_rep
+                a.__split_fields.rec__selfdrivingcar__car__gear)
+               = (Selfdrivingcar__gearbox__rep.to_rep
+                    b.__split_fields.rec__selfdrivingcar__car__gear)) /\
+              ((Selfdrivingcar__onoff__rep.to_rep
+                  a.__split_fields.rec__selfdrivingcar__car__switch)
+                 = (Selfdrivingcar__onoff__rep.to_rep
+                      b.__split_fields.rec__selfdrivingcar__car__switch)) /\
+              ((Selfdrivingcar__chargelevel__rep.to_rep
+                  a.__split_fields.rec__selfdrivingcar__car__battery)
+                 = (Selfdrivingcar__chargelevel__rep.to_rep
+                      b.__split_fields.rec__selfdrivingcar__car__battery)) /\
+              ((Selfdrivingcar__carspeed__rep.to_rep
+                  a.__split_fields.rec__selfdrivingcar__car__speed)
+                 = (Selfdrivingcar__carspeed__rep.to_rep
+                      b.__split_fields.rec__selfdrivingcar__car__speed)) /\
+              ((Selfdrivingcar__object__rep.to_rep
+                  a.__split_fields.rec__selfdrivingcar__car__sensor)
+                 = (Selfdrivingcar__object__rep.to_rep
+                      b.__split_fields.rec__selfdrivingcar__car__sensor)) /\
+              ((Selfdrivingcar__diagnosticmode__rep.to_rep
+                  a.__split_fields.rec__selfdrivingcar__car__diagnostic)
+                 = (Selfdrivingcar__diagnosticmode__rep.to_rep
+                      b.__split_fields.rec__selfdrivingcar__car__diagnostic))
+              /\
+              ((Selfdrivingcar__chargestate__rep.to_rep
+                  a.__split_fields.rec__selfdrivingcar__car__charge)
+                 = (Selfdrivingcar__chargestate__rep.to_rep
+                      b.__split_fields.rec__selfdrivingcar__car__charge)))
+           then True  else False)
+
+end
+
+(* Module for axiomatizing type "car" defined at selfdrivingcar.ads:14, created in Gnat2Why.Types.Translate_Type *)
+module Selfdrivingcar__car
+  
+  use export Selfdrivingcar__car__rep
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type car  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  function   value__size () requires {  } ensures  {  } returns int
+  
+  function   object__size () requires {  } ensures  {  } returns int
+  
+  function   alignment () requires {  } ensures  {  } returns int
+  
+  axiom value__size_axiom : ((value__size ) >= 0)
+  
+  axiom object__size_axiom : ((object__size ) >= 0)
+  
+  axiom alignment_axiom : ((alignment ) >= 0)
+  
+  function   selfdrivingcar__car__gear__first__bit () requires {  } ensures 
+    {  } returns int
+  
+  function   selfdrivingcar__car__gear__last__bit () requires {  } ensures 
+    {  } returns int
+  
+  function   selfdrivingcar__car__gear__position () requires {  } ensures 
+    {  } returns int
+  
+  axiom selfdrivingcar__car__gear__first__bit_axiom : ((selfdrivingcar__car__gear__first__bit
+                                                          ) >= 0)
+  
+  axiom selfdrivingcar__car__gear__last__bit_axiom : ((selfdrivingcar__car__gear__last__bit
+                                                         )
+                                                        > (selfdrivingcar__car__gear__first__bit
+                                                             ))
+  
+  axiom selfdrivingcar__car__gear__position_axiom : ((selfdrivingcar__car__gear__position
+                                                        ) >= 0)
+  
+  function   selfdrivingcar__car__switch__first__bit () requires {  }
+    ensures  {  } returns int
+  
+  function   selfdrivingcar__car__switch__last__bit () requires {  } ensures 
+    {  } returns int
+  
+  function   selfdrivingcar__car__switch__position () requires {  } ensures 
+    {  } returns int
+  
+  axiom selfdrivingcar__car__switch__first__bit_axiom : ((selfdrivingcar__car__switch__first__bit
+                                                            ) >= 0)
+  
+  axiom selfdrivingcar__car__switch__last__bit_axiom : ((selfdrivingcar__car__switch__last__bit
+                                                           )
+                                                          > (selfdrivingcar__car__switch__first__bit
+                                                               ))
+  
+  axiom selfdrivingcar__car__switch__position_axiom : ((selfdrivingcar__car__switch__position
+                                                          ) >= 0)
+  
+  function   selfdrivingcar__car__battery__first__bit () requires {  }
+    ensures  {  } returns int
+  
+  function   selfdrivingcar__car__battery__last__bit () requires {  }
+    ensures  {  } returns int
+  
+  function   selfdrivingcar__car__battery__position () requires {  } ensures 
+    {  } returns int
+  
+  axiom selfdrivingcar__car__battery__first__bit_axiom : ((selfdrivingcar__car__battery__first__bit
+                                                             ) >= 0)
+  
+  axiom selfdrivingcar__car__battery__last__bit_axiom : ((selfdrivingcar__car__battery__last__bit
+                                                            )
+                                                           > (selfdrivingcar__car__battery__first__bit
+                                                                ))
+  
+  axiom selfdrivingcar__car__battery__position_axiom : ((selfdrivingcar__car__battery__position
+                                                           ) >= 0)
+  
+  function   selfdrivingcar__car__speed__first__bit () requires {  } ensures 
+    {  } returns int
+  
+  function   selfdrivingcar__car__speed__last__bit () requires {  } ensures 
+    {  } returns int
+  
+  function   selfdrivingcar__car__speed__position () requires {  } ensures 
+    {  } returns int
+  
+  axiom selfdrivingcar__car__speed__first__bit_axiom : ((selfdrivingcar__car__speed__first__bit
+                                                           ) >= 0)
+  
+  axiom selfdrivingcar__car__speed__last__bit_axiom : ((selfdrivingcar__car__speed__last__bit
+                                                          )
+                                                         > (selfdrivingcar__car__speed__first__bit
+                                                              ))
+  
+  axiom selfdrivingcar__car__speed__position_axiom : ((selfdrivingcar__car__speed__position
+                                                         ) >= 0)
+  
+  function   selfdrivingcar__car__sensor__first__bit () requires {  }
+    ensures  {  } returns int
+  
+  function   selfdrivingcar__car__sensor__last__bit () requires {  } ensures 
+    {  } returns int
+  
+  function   selfdrivingcar__car__sensor__position () requires {  } ensures 
+    {  } returns int
+  
+  axiom selfdrivingcar__car__sensor__first__bit_axiom : ((selfdrivingcar__car__sensor__first__bit
+                                                            ) >= 0)
+  
+  axiom selfdrivingcar__car__sensor__last__bit_axiom : ((selfdrivingcar__car__sensor__last__bit
+                                                           )
+                                                          > (selfdrivingcar__car__sensor__first__bit
+                                                               ))
+  
+  axiom selfdrivingcar__car__sensor__position_axiom : ((selfdrivingcar__car__sensor__position
+                                                          ) >= 0)
+  
+  function   selfdrivingcar__car__diagnostic__first__bit () requires {  }
+    ensures  {  } returns int
+  
+  function   selfdrivingcar__car__diagnostic__last__bit () requires {  }
+    ensures  {  } returns int
+  
+  function   selfdrivingcar__car__diagnostic__position () requires {  }
+    ensures  {  } returns int
+  
+  axiom selfdrivingcar__car__diagnostic__first__bit_axiom : ((selfdrivingcar__car__diagnostic__first__bit
+                                                                ) >= 0)
+  
+  axiom selfdrivingcar__car__diagnostic__last__bit_axiom : ((selfdrivingcar__car__diagnostic__last__bit
+                                                               )
+                                                              > (selfdrivingcar__car__diagnostic__first__bit
+                                                                   ))
+  
+  axiom selfdrivingcar__car__diagnostic__position_axiom : ((selfdrivingcar__car__diagnostic__position
+                                                              ) >= 0)
+  
+  function   selfdrivingcar__car__charge__first__bit () requires {  }
+    ensures  {  } returns int
+  
+  function   selfdrivingcar__car__charge__last__bit () requires {  } ensures 
+    {  } returns int
+  
+  function   selfdrivingcar__car__charge__position () requires {  } ensures 
+    {  } returns int
+  
+  axiom selfdrivingcar__car__charge__first__bit_axiom : ((selfdrivingcar__car__charge__first__bit
+                                                            ) >= 0)
+  
+  axiom selfdrivingcar__car__charge__last__bit_axiom : ((selfdrivingcar__car__charge__last__bit
+                                                           )
+                                                          > (selfdrivingcar__car__charge__first__bit
+                                                               ))
+  
+  axiom selfdrivingcar__car__charge__position_axiom : ((selfdrivingcar__car__charge__position
+                                                          ) >= 0)
+  
+  function   user_eq (a : car b : car) requires { True } ensures  { True }
+    returns bool
+  
+  function   dummy () requires {  } ensures  {  } returns car
+  
+  type car__ref  = { mutable car__content : car }
+  
+  function   car__ref_car__content__projection (a : car__ref) requires {  }
+    ensures  {  } returns car = a.car__content
+  
+  meta model_projection function car__ref_car__content__projection
+  
+  meta inline:no function car__ref_car__content__projection
+  
+  function   car__havoc (x : car__ref) requires {  } ensures  {  } returns
+    unit
+
+end
+
+(* Module for defining a ref holding the value of variable "thecar" defined at selfdrivingcar.ads:25, created in Gnat2Why.Decls.Translate_Variable *)
+module Selfdrivingcar__thecar
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Selfdrivingcar__car
+  
+  val thecar__split_fields [model_projected] [model_trace:1067]
+  [name:TheCar] [sloc:selfdrivingcar.ads:25]: Selfdrivingcar__car.__split_fields
+
+end
+
+(* Module giving axioms for type "car" defined at selfdrivingcar.ads:14, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Selfdrivingcar__car___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Selfdrivingcar__car
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol]
+    [introduced] temp___expr_222) : Selfdrivingcar__car.car
+    ([mlw:proxy_symbol] [introduced] temp___is_init_218) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_219) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_220) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_221) : bool) requires
+    { True } ensures  { True } returns  = True
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol]
+    [introduced] temp___expr_223) : Selfdrivingcar__car.car
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_224) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module for possibly declaring a logic function for "minimumcharge" defined at selfdrivingcar.ads:31, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Selfdrivingcar__minimumcharge
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Selfdrivingcar__car
+  
+  function   minimumcharge
+    (Selfdrivingcar__thecar___thecar__split_fields___ : Selfdrivingcar__car.__split_fields)
+    requires { True } ensures  { True } returns bool
+  
+  function   minimumcharge__function_guard
+    (([mlw:proxy_symbol] [introduced] temp___result_161) : bool
+    Selfdrivingcar__thecar___thecar__split_fields___ : Selfdrivingcar__car.__split_fields)
+    requires { True } ensures  { True } returns bool
+
+end
+
+(* Module giving a program function and a defining axiom for the expression function "minimumcharge" defined at selfdrivingcar.ads:31, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+module Selfdrivingcar__minimumcharge___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Selfdrivingcar__thecar
+  use        Selfdrivingcar__car
+  use        Selfdrivingcar__car___axiom
+  use        Selfdrivingcar__minimumcharge
+  use        Selfdrivingcar__chargelevel
+  use        Selfdrivingcar__chargelevel__rep
+  
+  function   minimumcharge (__void_param : unit) requires { True } ensures 
+    { ((result
+          = (Selfdrivingcar__minimumcharge.minimumcharge
+               !Selfdrivingcar__thecar.thecar__split_fields)) /\
+         (Selfdrivingcar__minimumcharge.minimumcharge__function_guard result
+            !Selfdrivingcar__thecar.thecar__split_fields) /\
+         (result
+            = ((Selfdrivingcar__chargelevel__rep.to_rep
+                  ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__battery)
+                 >= 10))) } returns bool
+  
+  axiom minimumcharge__post_axiom : --pp_universal_quantif NOT IMPLEMENTED
+  
+  axiom minimumcharge__def_axiom : --pp_universal_quantif NOT IMPLEMENTED
+
+end
+
+(* Module giving axioms for type "onoff" defined at selfdrivingcar.ads:3, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Selfdrivingcar__onoff___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Selfdrivingcar__onoff
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_166) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_162) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_163) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_164) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_165) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_162) = True) \/
+          (Selfdrivingcar__onoff.first <= Selfdrivingcar__onoff.last))
+       then
+       (Selfdrivingcar__onoff.dynamic_property Selfdrivingcar__onoff.first
+          Selfdrivingcar__onoff.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_166))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_167) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_168) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving axioms for type "gearbox" defined at selfdrivingcar.ads:4, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Selfdrivingcar__gearbox___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Selfdrivingcar__gearbox
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_173) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_169) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_170) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_171) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_172) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_169) = True) \/
+          (Selfdrivingcar__gearbox.first <= Selfdrivingcar__gearbox.last))
+       then
+       (Selfdrivingcar__gearbox.dynamic_property
+          Selfdrivingcar__gearbox.first Selfdrivingcar__gearbox.last
+          ([mlw:proxy_symbol] [introduced] temp___expr_173))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_174) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_175) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving axioms for type "chargelevel" defined at selfdrivingcar.ads:5, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Selfdrivingcar__chargelevel___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Selfdrivingcar__chargelevel
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_180) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_176) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_177) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_178) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_179) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_176) = True) \/
+          (Selfdrivingcar__chargelevel.first
+             <= Selfdrivingcar__chargelevel.last))
+       then
+       (Selfdrivingcar__chargelevel.dynamic_property
+          Selfdrivingcar__chargelevel.first Selfdrivingcar__chargelevel.last
+          ([mlw:proxy_symbol] [introduced] temp___expr_180))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_181) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_182) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving axioms for type "carspeed" defined at selfdrivingcar.ads:6, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Selfdrivingcar__carspeed___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Selfdrivingcar__carspeed
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_187) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_183) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_184) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_185) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_186) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_183) = True) \/
+          (Selfdrivingcar__carspeed.first <= Selfdrivingcar__carspeed.last))
+       then
+       (Selfdrivingcar__carspeed.dynamic_property
+          Selfdrivingcar__carspeed.first Selfdrivingcar__carspeed.last
+          ([mlw:proxy_symbol] [introduced] temp___expr_187))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_188) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_189) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving axioms for type "object" defined at selfdrivingcar.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Selfdrivingcar__object___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Selfdrivingcar__object
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_194) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_190) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_191) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_192) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_193) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_190) = True) \/
+          (Selfdrivingcar__object.first <= Selfdrivingcar__object.last))
+       then
+       (Selfdrivingcar__object.dynamic_property Selfdrivingcar__object.first
+          Selfdrivingcar__object.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_194))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_195) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_196) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving axioms for type "diagnosticmode" defined at selfdrivingcar.ads:8, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Selfdrivingcar__diagnosticmode___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Selfdrivingcar__diagnosticmode
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_201) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_197) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_198) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_199) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_200) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_197) = True) \/
+          (Selfdrivingcar__diagnosticmode.first
+             <= Selfdrivingcar__diagnosticmode.last))
+       then
+       (Selfdrivingcar__diagnosticmode.dynamic_property
+          Selfdrivingcar__diagnosticmode.first
+          Selfdrivingcar__diagnosticmode.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_201))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_202) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_203) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving axioms for type "chargestate" defined at selfdrivingcar.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Selfdrivingcar__chargestate___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Selfdrivingcar__chargestate
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_208) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_204) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_205) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_206) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_207) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_204) = True) \/
+          (Selfdrivingcar__chargestate.first
+             <= Selfdrivingcar__chargestate.last))
+       then
+       (Selfdrivingcar__chargestate.dynamic_property
+          Selfdrivingcar__chargestate.first Selfdrivingcar__chargestate.last
+          ([mlw:proxy_symbol] [introduced] temp___expr_208))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_209) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_210) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving an empty axiom for the entity "thecar" defined at selfdrivingcar.ads:25, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Selfdrivingcar__thecar___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "drivecar" defined at selfdrivingcar.ads:49, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Selfdrivingcar__drivecar__subprogram_def
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        _gnatprove_standard.Main
+  use        _gnatprove_standard.Boolean
+  use        Selfdrivingcar__thecar
+  use        Selfdrivingcar__car
+  use        Selfdrivingcar__car___axiom
+  use        Selfdrivingcar__minimumcharge
+  use        Selfdrivingcar__minimumcharge___axiom
+  use        Selfdrivingcar__onoff
+  use        Selfdrivingcar__onoff__rep
+  use        Selfdrivingcar__chargelevel
+  use        Selfdrivingcar__chargelevel__rep
+  use        Selfdrivingcar__carspeed
+  use        Selfdrivingcar__carspeed__rep
+  use        Selfdrivingcar__onoff___axiom
+  use        Selfdrivingcar__gearbox___axiom
+  use        Selfdrivingcar__chargelevel___axiom
+  use        Selfdrivingcar__carspeed___axiom
+  use        Selfdrivingcar__object___axiom
+  use        Selfdrivingcar__diagnosticmode___axiom
+  use        Selfdrivingcar__chargestate___axiom
+  use        Selfdrivingcar__car___axiom
+  use        Selfdrivingcar__thecar___axiom
+  use        Selfdrivingcar__minimumcharge___axiom
+  
+  function [GP_Subp:selfdrivingcar.ads:49] [sloc:selfdrivingcar.ads:49] def
+    (__void_param : unit) requires { True } ensures 
+    { ([sloc:selfdrivingcar.ads:53] ([GP_Reason:VC_POSTCONDITION]
+                                    [GP_Shape:pragargs__cmp] [model_vc_post]
+                                    [comment:     Post => TheCar.speed > TheCar.speed'Old;              ^ selfdrivingcar.ads:53:14:VC_POSTCONDITION]
+                                    [GP_Id:2]
+                                    [GP_Sloc:selfdrivingcar.ads:53:14] 
+                                    ([GP_Pretty_Ada:1455]
+                                    [GP_Sloc:selfdrivingcar.ads:53:14] (
+                                    (Selfdrivingcar__carspeed__rep.to_rep
+                                       ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__speed)
+                                      > (Selfdrivingcar__carspeed__rep.to_rep
+                                           --pp_tagged NOT IMPLEMENTED))))) }
+    returns
+     = (* Assume dynamic invariants of inputs of the subprogram selfdrivingcar.ads:49 *);
+        assume
+        { (Selfdrivingcar__car___axiom.dynamic_invariant
+             --pp_record_aggregate NOT IMPLEMENTED True False True True) };
+        (* Assume moved pointers in outputs of the subprogram selfdrivingcar.ads:49 *);
+        (* Check for RTE in the Pre of the subprogram selfdrivingcar.ads:49 *);
+        abstract ensures
+        { True } begin  (let _ =
+                       (_gnatprove_standard.Boolean.andb
+                          (_gnatprove_standard.Boolean.andb
+                             (Selfdrivingcar__minimumcharge___axiom.minimumcharge
+                                ())
+                             ((Selfdrivingcar__carspeed__rep.to_rep
+                                 ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__speed)
+                                > 0))
+                          ((Selfdrivingcar__carspeed__rep.to_rep
+                              ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__speed)
+                             < 100))
+                       in ())  end;
+        (* Assume Pre of the subprogram selfdrivingcar.ads:49 *);
+        assume
+        { ((([GP_Pretty_Ada:1150] ((epsilon ([mlw:proxy_symbol]
+                                   [introduced] temp___result_244) : bool {
+                                   ((([mlw:proxy_symbol]
+                                       [introduced] temp___result_244)
+                                       = (Selfdrivingcar__minimumcharge.minimumcharge
+                                            !Selfdrivingcar__thecar.thecar__split_fields))
+                                      /\
+                                      (Selfdrivingcar__minimumcharge.minimumcharge__function_guard
+                                         ([mlw:proxy_symbol]
+                                         [introduced] temp___result_244)
+                                         !Selfdrivingcar__thecar.thecar__split_fields))})
+                                     = True)) /\
+              ([GP_Pretty_Ada:1156] ((Selfdrivingcar__carspeed__rep.to_rep
+                                        ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__speed)
+                                       > 0))) /\
+             ([GP_Pretty_Ada:1164] ((Selfdrivingcar__carspeed__rep.to_rep
+                                       ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__speed)
+                                      < 100))) };
+        (let ([mlw:proxy_symbol] [introduced] temp___old_243) =
+        ( (Selfdrivingcar__carspeed__rep.to_rep
+             ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__speed))
+        in (try
+        ();
+          ([GP_Sloc:selfdrivingcar.adb:15:11] ([sloc:selfdrivingcar.adb:15] ()));
+          ([GP_Sloc:selfdrivingcar.adb:15:34] ([sloc:selfdrivingcar.adb:15] ()));
+          ([GP_Sloc:selfdrivingcar.adb:16:14] ([sloc:selfdrivingcar.adb:16] ()));
+          ([GP_Sloc:selfdrivingcar.adb:15:7] ([sloc:selfdrivingcar.adb:15] 
+                                             (if
+                                             ([sloc:selfdrivingcar.adb:15] ([branch_id=855]
+                                             _gnatprove_standard.Main.spark__branch
+                                             :=
+                                             (_gnatprove_standard.Boolean.andb
+                                                (_gnatprove_standard.Boolean.andb
+                                                   ((Selfdrivingcar__onoff__rep.to_rep
+                                                       ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__switch)
+                                                      = 0)
+                                                   ((Selfdrivingcar__chargelevel__rep.to_rep
+                                                       ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__battery)
+                                                      >= 10))
+                                                ((Selfdrivingcar__carspeed__rep.to_rep
+                                                    ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__speed)
+                                                   < 100))));
+                                             ([branch_id=855] _gnatprove_standard.Main.spark__branch).bool__content
+                                             then
+                                             ();
+                                             ([GP_Sloc:selfdrivingcar.adb:17:12] 
+                                             ([sloc:selfdrivingcar.adb:17] ()));
+                                             ([GP_Sloc:selfdrivingcar.adb:17:28] 
+                                             ([sloc:selfdrivingcar.adb:17] ()));
+                                             ([GP_Sloc:selfdrivingcar.adb:17:25] 
+                                             ([sloc:selfdrivingcar.adb:17] (let ([mlw:proxy_symbol]
+                                             [introduced] temp___242) =
+                                             (let ([mlw:proxy_symbol]
+                                               [introduced] temp___241) =
+                                               ( --pp_record_aggregate NOT IMPLEMENTED)
+                                               in abstract ensures
+                                               { True } begin  (let _ =
+                                                              ([mlw:proxy_symbol]
+                                                                [introduced] temp___241).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__speed
+                                                              in ())  end;
+                                               --pp_record_update NOT IMPLEMENTED)
+                                             in (
+                                             Selfdrivingcar__thecar.thecar__split_fields
+                                             :=
+                                             ([mlw:proxy_symbol]
+                                               [introduced] temp___242).Selfdrivingcar__car.__split_fields))))
+                                              else ())));
+          raise Return__exc with | Return__exc  -> ());
+        abstract ensures
+        { True } begin  (let _ =
+                       ((Selfdrivingcar__carspeed__rep.to_rep
+                           ( --pp_record_aggregate NOT IMPLEMENTED).Selfdrivingcar__car.__split_fields.Selfdrivingcar__car.rec__selfdrivingcar__car__speed)
+                          > ([mlw:proxy_symbol] [introduced] temp___old_243))
+                       in ())  end)
+
+end

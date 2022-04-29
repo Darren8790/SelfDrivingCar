@@ -1,0 +1,7 @@
+selfdrivingcar.adb:65:41: error: expected type "CarSpeed" defined at selfdrivingcar.ads:6
+selfdrivingcar.adb:65:41: error: found type "Standard.Boolean"
+selfdrivingcar.ads:79:16: error: cannot mix moded and non-moded global lists
+selfdrivingcar.ads:79:33: error: ";" should be ","
+selfdrivingcar.ads:80:19: error: expected type "Standard.Boolean"
+selfdrivingcar.ads:80:19: error: found type "CarSpeed" defined at line 6
+selfdrivingcar.ads:80:25: error: missing ";"

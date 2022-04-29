@@ -1,0 +1,2 @@
+selfdrivingcar.adb:33:36: error: expected type "CarSpeed" defined at selfdrivingcar.ads:6
+selfdrivingcar.adb:33:36: error: found type "Standard.Boolean"

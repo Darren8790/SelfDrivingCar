@@ -1,0 +1,6 @@
+selfdrivingcar.ads:33:06: error: expected type "Standard.Boolean"
+selfdrivingcar.ads:33:06: error: found a composite type
+selfdrivingcar.ads:37:21: error: prefix of "Range" attribute must be a type
+selfdrivingcar.ads:62:20: error: expected type "Standard.Boolean"
+selfdrivingcar.ads:62:20: error: found type "Gearbox" defined at line 4
+selfdrivingcar.ads:62:25: error: missing ";"

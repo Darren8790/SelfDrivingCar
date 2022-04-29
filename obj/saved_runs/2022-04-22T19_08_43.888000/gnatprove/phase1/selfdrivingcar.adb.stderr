@@ -1,0 +1,8 @@
+selfdrivingcar.adb:1:14: error: missing body for "turnOnCar" declared at selfdrivingcar.ads:19
+selfdrivingcar.adb:1:14: error: missing body for "minimumCharge" declared at selfdrivingcar.ads:24
+selfdrivingcar.adb:1:14: error: missing body for "lowCharge" declared at selfdrivingcar.ads:25
+selfdrivingcar.adb:1:14: error: missing body for "speedLimit" declared at selfdrivingcar.ads:26
+selfdrivingcar.adb:1:14: error: missing body for "changeGear" declared at selfdrivingcar.ads:27
+selfdrivingcar.adb:1:14: error: missing body for "objectDetection" declared at selfdrivingcar.ads:28
+selfdrivingcar.adb:1:14: error: missing body for "diagnosticMode" declared at selfdrivingcar.ads:29
+selfdrivingcar.ads:20:26: error: global item must denote object, state or current instance of concurrent type

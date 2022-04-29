@@ -1,0 +1,9 @@
+selfdrivingcar.adb:64:32: error: invalid use of subtype mark in expression or call
+selfdrivingcar.adb:65:41: error: expected type "CarSpeed" defined at selfdrivingcar.ads:6
+selfdrivingcar.adb:65:41: error: found type "Standard.Boolean"
+selfdrivingcar.ads:75:16: error: cannot mix moded and non-moded global lists
+selfdrivingcar.ads:75:33: error: ";" should be ","
+selfdrivingcar.ads:75:35: error: global item must denote object, state or current instance of concurrent type
+selfdrivingcar.ads:76:19: error: expected type "Standard.Boolean"
+selfdrivingcar.ads:76:19: error: found type "CarSpeed" defined at line 6
+selfdrivingcar.ads:76:25: error: missing ";"

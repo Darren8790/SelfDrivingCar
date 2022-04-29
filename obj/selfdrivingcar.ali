@@ -1,0 +1,85 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U selfdrivingcar%b	selfdrivingcar.adb	b5cbe45c NE OO PK
+
+U selfdrivingcar%s	selfdrivingcar.ads	a6173598 EE NE OO PK
+
+D selfdrivingcar.ads	20220428205134 a6173598 selfdrivingcar%s
+D selfdrivingcar.adb	20220429085520 13dcd1c4 selfdrivingcar%b
+D system.ads		20210520051136 2ffa5114 system%s
+G a e
+G c Z s s [carIP selfdrivingcar 13 9 none]
+G c Z s s [minimumcharge selfdrivingcar 29 13 none]
+G c Z s s [speedlimit selfdrivingcar 33 13 none]
+G c Z s b [turnoncar selfdrivingcar 37 14 none]
+G c Z s b [drivecar selfdrivingcar 42 14 none]
+G c Z s b [increasespeed selfdrivingcar 47 14 none]
+G c Z s b [carspeedlimit selfdrivingcar 52 14 none]
+G c Z s b [lowcharge selfdrivingcar 57 14 none]
+G c Z s b [changegear selfdrivingcar 62 14 none]
+G c Z s b [objectdetection selfdrivingcar 67 14 none]
+G c Z s b [enablediagnosticmode selfdrivingcar 72 14 none]
+G c Z s b [trafficlightsignal selfdrivingcar 77 14 none]
+X 1 selfdrivingcar.ads
+1K9*selfDrivingCar 82l5 82e19 2|1b14 79l5 79t19
+3E9*OnOff 3e27 15r16
+3n19*On{3E9} 40r30 74r29 2|7r29 66r27
+3n23*Off{3E9} 25r47 39r54 75r30 2|6r27 8r29 67r29
+4E9*Gearbox 4e45 14r14
+4n21*Parked{4E9} 25r29 39r27 64r48 2|6r49 50r46
+4n29*Drive{4E9} 65r28 2|51r27
+4n36*Reversed{4E9}
+5I9*ChargeLevel<short_short_integer> 16r17
+6I9*CarSpeed<short_short_integer> 17r15
+7E9*Object 7e40 18r16
+7n20*Detected{7E9} 69r29 2|58r27
+7n30*Undeteced{7E9} 26r43
+8E9*DiagnosticMode 8e36 19r20
+8n28*On{8E9} 75r58 2|67r55
+8n32*Off{8E9} 26r68 74r56
+10E9*ChargeState 10e38 21r16
+10n25*Low{10E9} 60r30 2|34r29
+10n30*Ok{10E9} 2|35r29
+10n34*Max{10E9} 27r30
+11E9*TrafficLight 11e44 22r16
+11n26*Red{11E9} 27r45 79r51 2|74r48
+11n31*Amber{11E9}
+11n38*Green{11E9}
+13R9*Car 23e14 25r13
+14e7*gear{4E9} 25m21 39r20 64r41 65r21 2|6r42 50r39 51m19
+15e7*switch{3E9} 25m37 39r45 40r21 74r20 75r21 2|6r18 7m19 8m19 66r18 67m19
+16i7*battery{5I9} 25m52 31r14 59r20 2|15r18 33r18
+17i7*speed{6I9} 26m21 35r14 35r37 44r38 45r39 49r20 64r20 70r21 79r20 80r21
+. 2|15r43 16m19 16r35 17m19 24r18 24r39 25m19 26m19 42r18 43m19 50r18 59m19
+. 74r18 75m19
+18e7*sensor{7E9} 26m33 69r20 2|58r18
+19e7*diagnostic{8E9} 26m54 74r43 75r45 2|67m41
+21e7*charge{10E9} 27m20 60r21 2|34m19 35m19
+22e7*signal{11E9} 27m35 79r42 2|74r39
+25r4*TheCar{13R9} 31r7 35r7 35r30 38r27 39r13 39r38 40r14 43r27 44r31 45r32
+. 48r27 49r13 53r27 58r27 59r13 60r14 63r27 64r13 64r34 65r14 68r27 69r13
+. 70r14 73r27 74r13 74r36 75r14 75r38 78r27 79r13 79r35 80r14 2|6r11 6r35
+. 7m12 8m12 15r11 15r36 16m12 16r28 17m12 24r11 24r32 25m12 26m12 33r11 34m12
+. 35m12 42r11 43m12 50r11 50r32 51m12 58r11 59m12 66r11 67m12 67m34 74r11
+. 74r32 75m12
+29V13*minimumCharge{boolean} 44s13 45s14
+33V13*speedLimit{boolean} 50s14 54s13 55s14
+37U14*turnOnCar 2|3b14 10l8 10t17
+42U14*driveCar 2|12b14 19l8 19t16
+47U14*increaseSpeed 2|21b14 28l8 28t21
+52U14*carSpeedLimit 2|39b14 45l8 45t21
+57U14*lowCharge 2|30b14 37l8 37t17
+62U14*changeGear 2|47b14 53l8 53t18
+67U14*objectDetection 2|55b14 61l8 61t23
+72U14*enableDiagnosticMode 2|63b14 69l8 69t28
+77U14*trafficLightSignal 2|71b14 77l8 77t26
+

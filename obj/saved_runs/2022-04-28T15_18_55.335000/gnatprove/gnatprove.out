@@ -1,0 +1,34 @@
+Summary of SPARK analysis
+=========================
+
+--------------------------------------------------------------------------------------------
+SPARK Analysis results        Total       Flow   CodePeer     Provers   Justified   Unproved
+--------------------------------------------------------------------------------------------
+Data Dependencies                 7          7          .           .           .          .
+Flow Dependencies                 .          .          .           .           .          .
+Initialization                    .          .          .           .           .          .
+Non-Aliasing                      .          .          .           .           .          .
+Run-time Checks                   1          .          .    1 (CVC4)           .          .
+Assertions                        .          .          .           .           .          .
+Functional Contracts              7          .          .    6 (CVC4)           .          1
+LSP Verification                  .          .          .           .           .          .
+Termination                       .          .          .           .           .          .
+Concurrency                       .          .          .           .           .          .
+--------------------------------------------------------------------------------------------
+Total                            15    7 (47%)          .     7 (47%)           .     1 (7%)
+
+
+max steps used for successful proof: 1
+
+Analyzed 1 unit
+in unit selfdrivingcar, 10 subprograms and packages out of 10 analyzed
+  selfDrivingCar at selfdrivingcar.ads:1 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
+  selfDrivingCar.changeGear at selfdrivingcar.ads:52 flow analyzed (0 errors, 0 checks and 0 warnings) and not proved, 0 checks out of 1 proved
+  selfDrivingCar.driveCar at selfdrivingcar.ads:42 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (2 checks)
+  selfDrivingCar.enableDiagnosticMode at selfdrivingcar.ads:62 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (1 checks)
+  selfDrivingCar.lowCharge at selfdrivingcar.ads:47 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (1 checks)
+  selfDrivingCar.minimumCharge at selfdrivingcar.ads:29 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
+  selfDrivingCar.objectDetection at selfdrivingcar.ads:57 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (1 checks)
+  selfDrivingCar.speedLimit at selfdrivingcar.ads:33 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
+  selfDrivingCar.trafficLightSignal at selfdrivingcar.ads:67 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (1 checks)
+  selfDrivingCar.turnOnCar at selfdrivingcar.ads:37 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (1 checks)

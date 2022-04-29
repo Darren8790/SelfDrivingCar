@@ -1,0 +1,13 @@
+selfdrivingcar.adb:63:26: error: invalid prefix in selected component "TrafficLight"
+selfdrivingcar.adb:64:12: error: invalid use of subtype mark in expression or call
+selfdrivingcar.adb:64:28: error: invalid prefix in selected component "TrafficLight"
+selfdrivingcar.ads:18:15: error: component "Speed" cannot be used before end of record declaration
+selfdrivingcar.ads:29:28: error: object "Light" cannot be used before end of its declaration
+selfdrivingcar.ads:33:31: error: prefix of "Last" attribute must be a type
+selfdrivingcar.ads:52:53: error: "speedLimit" is undefined
+selfdrivingcar.ads:62:20: error: expected type "Standard.Boolean"
+selfdrivingcar.ads:62:20: error: found type "Gearbox" defined at line 4
+selfdrivingcar.ads:62:25: error: missing ";"
+selfdrivingcar.ads:75:33: error: malformed global list
+selfdrivingcar.ads:76:34: error: invalid prefix in selected component "TrafficLight"
+selfdrivingcar.ads:76:50: error: missing ";"

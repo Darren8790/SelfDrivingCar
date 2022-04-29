@@ -1,0 +1,14 @@
+selfdrivingcar.adb:40:35: error: there is no applicable operator "Or" for type "Gearbox" defined at selfdrivingcar.ads:4
+selfdrivingcar.adb:52:14: error: "diagnosticMode" conflicts with declaration at selfdrivingcar.ads:8
+selfdrivingcar.adb:63:11: error: invalid prefix in selected component "Light"
+selfdrivingcar.adb:64:12: error: invalid prefix in selected component "Light"
+selfdrivingcar.ads:18:15: error: component "Speed" cannot be used before end of record declaration
+selfdrivingcar.ads:33:31: error: prefix of "Last" attribute must be a type
+selfdrivingcar.ads:52:53: error: "speedLimit" is undefined
+selfdrivingcar.ads:62:20: error: expected type "Standard.Boolean"
+selfdrivingcar.ads:62:20: error: found type "Gearbox" defined at line 4
+selfdrivingcar.ads:62:25: error: missing ";"
+selfdrivingcar.ads:69:14: error: "diagnosticMode" conflicts with declaration at line 8
+selfdrivingcar.ads:75:33: error: malformed global list
+selfdrivingcar.ads:76:34: error: invalid prefix in selected component "Light"
+selfdrivingcar.ads:76:43: error: missing ";"

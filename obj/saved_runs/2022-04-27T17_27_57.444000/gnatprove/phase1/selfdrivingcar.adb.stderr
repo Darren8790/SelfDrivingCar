@@ -1,0 +1,5 @@
+selfdrivingcar.adb:65:41: error: expected type "CarSpeed" defined at selfdrivingcar.ads:6
+selfdrivingcar.adb:65:41: error: found type "Standard.Boolean"
+selfdrivingcar.ads:80:19: error: expected type "Standard.Boolean"
+selfdrivingcar.ads:80:19: error: found type "CarSpeed" defined at line 6
+selfdrivingcar.ads:80:25: error: missing ";"

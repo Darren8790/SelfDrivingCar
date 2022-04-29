@@ -1,0 +1,49 @@
+V "GNAT Lib v2021"
+A -x
+A ada
+A -gnatA
+A -gnatc
+P GP FX
+
+RN
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U selfdrivingcar%b	selfdrivingcar.adb	22b035f6 OO PK
+
+U selfdrivingcar%s	selfdrivingcar.ads	43cc7df2 OO PK
+
+D selfdrivingcar.ads	20220422185408 43cc7df2 selfdrivingcar%s
+D selfdrivingcar.adb	20220422185402 617c4804 selfdrivingcar%b
+D system.ads		20210520051134 2ffa5114 system%s
+G a Z
+X 1 selfdrivingcar.ads
+1K9*selfDrivingCar 37l5 37e19 2|1b14 10l5 10t19
+4E9*OnOff 4e27 8r16
+4n19*On{4E9} 2|6r20
+4n23*Off{4E9} 11r43
+5E9*Gearbox 5e54 7r14
+5n21*Parked{5E9} 11r25 27r23 28r24
+5n29*Drive{5E9}
+5n36*Neutral{5E9}
+5n45*Reversed{5E9}
+6R9*Car 9e14 11r9
+7e7*gear{5E9} 11m17 27r16 28r17
+8e7*switch{4E9} 11m33 2|6m10
+11r4*S1{6R9} 26r27 27r13 28r14 2|6m7
+14I9*ChargeLevel<short_short_integer>
+15I9*Speed<short_short_integer>
+17E9*Object 17e40
+17n20*Detected{17E9}
+17n30*Undeteced{17E9}
+25U14*turnOnCar 2|3b14 7l8 7t17
+
+QQ SPARKVERSION SPARK Community 2021 (20210519)
+GG EK_DIRECT_CALLS selfdrivingcar__turnoncar 0
+GG EK_GLOBALS selfdrivingcar__turnoncar local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 selfdrivingcar proper_proof_in 0 proper_input 1 selfdrivingcar__s1 proper_output 1 selfdrivingcar__s1 refined_proof_in 0 refined_input 1 selfdrivingcar__s1 refined_output 1 selfdrivingcar__s1 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 selfdrivingcar__s1 LOCKS 0
+GG EK_DIRECT_CALLS selfdrivingcar 0
+GG EK_GLOBALS selfdrivingcar local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 1 selfdrivingcar__s1 refined_initializes 1 selfdrivingcar__s1 calls_proof 0 calls 0 calls_conditional 0 local_var 1 selfdrivingcar__s1 FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE selfdrivingcar TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE selfdrivingcar__turnoncar FALSE FALSE FALSE FALSE TRUE selfdrivingcar VISIBLE_PART
+GG EK_END_MARKER

@@ -1,0 +1,7 @@
+selfdrivingcar.adb:64:11: error: invalid use of subtype mark in expression or call
+selfdrivingcar.adb:64:28: error: invalid prefix in selected component "TrafficLight"
+selfdrivingcar.adb:65:12: error: invalid use of subtype mark in expression or call
+selfdrivingcar.ads:75:40: error: malformed global list
+selfdrivingcar.ads:76:13: error: invalid use of subtype mark in expression or call
+selfdrivingcar.ads:76:30: error: invalid prefix in selected component "TrafficLight"
+selfdrivingcar.ads:76:46: error: missing ";"

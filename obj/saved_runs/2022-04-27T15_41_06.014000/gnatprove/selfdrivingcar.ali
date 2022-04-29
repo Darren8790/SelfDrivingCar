@@ -1,0 +1,94 @@
+V "GNAT Lib v2021"
+A -x
+A ada
+A -gnatA
+A -gnatc
+P GP FX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U selfdrivingcar%b	selfdrivingcar.adb	3356c092 OO PK
+
+U selfdrivingcar%s	selfdrivingcar.ads	f6061d84 OO PK
+
+D selfdrivingcar.ads	20220427144058 f6061d84 selfdrivingcar%s
+D selfdrivingcar.adb	20220427144008 c550dd16 selfdrivingcar%b
+D system.ads		20210520051134 2ffa5114 system%s
+G a Z
+X 1 selfdrivingcar.ads
+1K9*selfDrivingCar 79l5 79e19 2|1b14 68l5 68t19
+3E9*OnOff 3e27 16r16
+3n19*On{3E9} 47r30 51r47 71r29 2|7r29 15r27 55r27
+3n23*Off{3E9} 25r47 46r54 72r30 2|6r27 8r29 56r29
+4E9*Gearbox 4e54 15r14
+4n21*Parked{4E9} 25r29 46r27 62r28 2|6r49 39r46
+4n29*Drive{4E9} 61r48
+4n36*Neutral{4E9} 2|40r27
+4n45*Reversed{4E9}
+5I9*ChargeLevel<short_short_integer> 17r17
+6I9*CarSpeed<short_short_integer> 18r15
+7E9*Object 7e40 19r16
+7n20*Detected{7E9} 66r29 2|47r27
+7n30*Undeteced{7E9} 26r43
+8E9*DiagnosticMode 8e36 20r20
+8n28*On{8E9} 72r58 2|56r55
+8n32*Off{8E9} 26r68 71r56
+10E9*ChargeState 10e38 22r16
+10n25*Low{10E9} 57r30 2|25r29
+10n30*Ok{10E9} 2|26r29
+10n34*Max{10E9} 27r30
+12E9*TrafficLight 12e44
+12n26*Red{12E9}
+12n31*Amber{12E9}
+12n38*Green{12E9}
+14R9*Car 23e14 25r13
+15e7*gear{4E9} 25m21 46r20 61r41 62r21 2|6r42 39r39 40m19
+16e7*switch{3E9} 25m37 46r45 47r21 51r38 71r20 72r21 2|6r18 7m19 8m19 15r18
+. 55r18 56m19
+17i7*battery{5I9} 25m52 33r14 56r20 2|15r41 24r18
+18i7*speed{6I9} 26m21 52r21 52r42 61r20 67r21 2|16m19 16r35 17m19 39r18 48m19
+19e7*sensor{7E9} 26m33 66r20 2|47r18
+20e7*diagnostic{8E9} 26m54 71r43 72r45 2|56m41
+22e7*charge{10E9} 27m20 57r21 2|25m19 26m19
+25r4*TheCar{14R9} 33r7 45r27 46r13 46r38 47r14 50r27 51r31 52r14 52r35 55r27
+. 56r13 57r14 60r27 61r13 61r34 62r14 65r27 66r13 67r14 70r27 71r13 71r36
+. 72r14 72r38 2|6r11 6r35 7m12 8m12 15r11 15r34 16m12 16r28 17m12 24r11 25m12
+. 26m12 39r11 39r32 40m12 47r11 48m12 55r11 56m12 56m34
+31V13*minimumCharge{boolean} 51s13
+44U14*turnOnCar 2|3b14 10l8 10t17
+49U14*driveCar 2|12b14 19l8 19t16
+54U14*lowCharge 2|21b14 28l8 28t17
+59U14*changeGear 2|36b14 42l8 42t18
+64U14*objectDetection 2|44b14 50l8 50t23
+69U14*enableDiagnosticMode 2|52b14 58l8 58t28
+
+QQ SPARKVERSION SPARK Community 2021 (20210519)
+GG EK_DIRECT_CALLS selfdrivingcar__minimumcharge 0
+GG EK_GLOBALS selfdrivingcar__minimumcharge local FALSE E_FUNCTION FALSE ORIGIN_FLOW 1 selfdrivingcar proper_proof_in 0 proper_input 1 selfdrivingcar__thecar proper_output 0 refined_proof_in 0 refined_input 1 selfdrivingcar__thecar refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 selfdrivingcar__thecar LOCKS 0
+GG EK_DIRECT_CALLS selfdrivingcar__turnoncar 0
+GG EK_GLOBALS selfdrivingcar__turnoncar local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 selfdrivingcar proper_proof_in 0 proper_input 1 selfdrivingcar__thecar proper_output 1 selfdrivingcar__thecar refined_proof_in 0 refined_input 1 selfdrivingcar__thecar refined_output 1 selfdrivingcar__thecar calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 selfdrivingcar__thecar LOCKS 0
+GG EK_DIRECT_CALLS selfdrivingcar__drivecar 1 selfdrivingcar__minimumcharge
+GG EK_GLOBALS selfdrivingcar__drivecar local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 selfdrivingcar proper_proof_in 0 proper_input 1 selfdrivingcar__thecar proper_output 1 selfdrivingcar__thecar refined_proof_in 0 refined_input 1 selfdrivingcar__thecar refined_output 1 selfdrivingcar__thecar calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 selfdrivingcar__thecar LOCKS 0
+GG EK_DIRECT_CALLS selfdrivingcar__lowcharge 0
+GG EK_GLOBALS selfdrivingcar__lowcharge local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 selfdrivingcar proper_proof_in 0 proper_input 1 selfdrivingcar__thecar proper_output 1 selfdrivingcar__thecar refined_proof_in 0 refined_input 1 selfdrivingcar__thecar refined_output 1 selfdrivingcar__thecar calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 selfdrivingcar__thecar LOCKS 0
+GG EK_DIRECT_CALLS selfdrivingcar__changegear 0
+GG EK_GLOBALS selfdrivingcar__changegear local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 selfdrivingcar proper_proof_in 0 proper_input 1 selfdrivingcar__thecar proper_output 1 selfdrivingcar__thecar refined_proof_in 0 refined_input 1 selfdrivingcar__thecar refined_output 1 selfdrivingcar__thecar calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 selfdrivingcar__thecar LOCKS 0
+GG EK_DIRECT_CALLS selfdrivingcar__objectdetection 0
+GG EK_GLOBALS selfdrivingcar__objectdetection local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 selfdrivingcar proper_proof_in 0 proper_input 1 selfdrivingcar__thecar proper_output 1 selfdrivingcar__thecar refined_proof_in 0 refined_input 1 selfdrivingcar__thecar refined_output 1 selfdrivingcar__thecar calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 selfdrivingcar__thecar LOCKS 0
+GG EK_DIRECT_CALLS selfdrivingcar__enablediagnosticmode 0
+GG EK_GLOBALS selfdrivingcar__enablediagnosticmode local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 selfdrivingcar proper_proof_in 0 proper_input 1 selfdrivingcar__thecar proper_output 1 selfdrivingcar__thecar refined_proof_in 0 refined_input 1 selfdrivingcar__thecar refined_output 1 selfdrivingcar__thecar calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 selfdrivingcar__thecar LOCKS 0
+GG EK_DIRECT_CALLS selfdrivingcar 0
+GG EK_GLOBALS selfdrivingcar local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 1 selfdrivingcar__thecar refined_initializes 1 selfdrivingcar__thecar calls_proof 0 calls 0 calls_conditional 0 local_var 1 selfdrivingcar__thecar FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE selfdrivingcar__lowcharge FALSE FALSE FALSE FALSE TRUE selfdrivingcar VISIBLE_PART
+GG EK_FLOW_SCOPE selfdrivingcar__objectdetection FALSE FALSE FALSE FALSE TRUE selfdrivingcar VISIBLE_PART
+GG EK_FLOW_SCOPE selfdrivingcar__drivecar FALSE FALSE FALSE FALSE TRUE selfdrivingcar VISIBLE_PART
+GG EK_FLOW_SCOPE selfdrivingcar TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE selfdrivingcar__changegear FALSE FALSE FALSE FALSE TRUE selfdrivingcar VISIBLE_PART
+GG EK_FLOW_SCOPE selfdrivingcar__enablediagnosticmode FALSE FALSE FALSE FALSE TRUE selfdrivingcar VISIBLE_PART
+GG EK_FLOW_SCOPE selfdrivingcar__minimumcharge FALSE FALSE FALSE FALSE TRUE selfdrivingcar VISIBLE_PART
+GG EK_FLOW_SCOPE selfdrivingcar__turnoncar FALSE FALSE FALSE FALSE TRUE selfdrivingcar VISIBLE_PART
+GG EK_END_MARKER

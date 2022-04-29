@@ -1,0 +1,26 @@
+Summary of SPARK analysis
+=========================
+
+------------------------------------------------------------------------------------------
+SPARK Analysis results        Total       Flow   CodePeer   Provers   Justified   Unproved
+------------------------------------------------------------------------------------------
+Data Dependencies                 1          1          .         .           .          .
+Flow Dependencies                 .          .          .         .           .          .
+Initialization                    .          .          .         .           .          .
+Non-Aliasing                      .          .          .         .           .          .
+Run-time Checks                   .          .          .         .           .          .
+Assertions                        .          .          .         .           .          .
+Functional Contracts              1          .          .         .           .          1
+LSP Verification                  .          .          .         .           .          .
+Termination                       .          .          .         .           .          .
+Concurrency                       .          .          .         .           .          .
+------------------------------------------------------------------------------------------
+Total                             2    1 (50%)          .         .           .    1 (50%)
+
+
+max steps used for successful proof: 0
+
+Analyzed 1 unit
+in unit selfdrivingcar, 2 subprograms and packages out of 2 analyzed
+  selfDrivingCar at selfdrivingcar.ads:1 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
+  selfDrivingCar.turnOnCar at selfdrivingcar.ads:25 flow analyzed (0 errors, 0 checks and 0 warnings) and not proved, 0 checks out of 1 proved

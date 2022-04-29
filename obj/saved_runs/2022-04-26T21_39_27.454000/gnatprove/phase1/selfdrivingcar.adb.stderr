@@ -1,0 +1,3 @@
+selfdrivingcar.ads:37:39: error: missing arrow
+selfdrivingcar.ads:62:25: error: missing ";"
+selfdrivingcar.ads:76:43: error: missing ";"

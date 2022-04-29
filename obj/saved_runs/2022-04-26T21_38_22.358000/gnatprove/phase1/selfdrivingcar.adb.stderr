@@ -1,0 +1,4 @@
+selfdrivingcar.ads:33:31: error: missing operand
+selfdrivingcar.ads:38:28: error: missing ")"
+selfdrivingcar.ads:62:25: error: missing ";"
+selfdrivingcar.ads:76:43: error: missing ";"

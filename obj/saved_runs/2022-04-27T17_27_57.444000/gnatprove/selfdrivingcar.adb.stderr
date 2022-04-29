@@ -1,0 +1,2 @@
+selfdrivingcar.ads:52:32: medium: postcondition might fail, cannot prove TheCar.speed > 0[#1]
+selfdrivingcar.ads:62:14: medium: postcondition might fail[#0]

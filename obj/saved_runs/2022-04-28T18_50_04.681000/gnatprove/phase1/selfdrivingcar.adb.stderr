@@ -1,0 +1,3 @@
+selfdrivingcar.ads:49:28: error: prefix of "Last" attribute must be a type
+selfdrivingcar.ads:49:65: error: expected type "CarSpeed" defined at line 6
+selfdrivingcar.ads:49:65: error: found type "Standard.Boolean"

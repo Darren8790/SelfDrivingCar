@@ -1,0 +1,2 @@
+selfdrivingcar.adb:1:14: error: missing body for "turnOnCar" declared at selfdrivingcar.ads:19
+selfdrivingcar.ads:20:26: error: global item must denote object, state or current instance of concurrent type

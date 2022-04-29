@@ -1,0 +1,42 @@
+'2022-04-29T09:54:39.891000':
+  category: GNATprove
+  files:
+  - C:\Users\darre\Documents\Ada\SelfDrivingCars\obj\gnatprove
+  label: Basic Prove File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    selfdrivingcar.adb:42:26: error: prefix of "Last" attribute must be a type
+
+    gnatprove: error during generation of Global contracts
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2022-04-29T09:54:39.891000'
+'2022-04-29T09:55:02.104000':
+  category: GNATprove
+  files:
+  - C:\Users\darre\Documents\Ada\SelfDrivingCars\obj\gnatprove
+  label: Basic Prove File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    selfdrivingcar.adb:42:39: error: unexpected relational operator
+
+    gnatprove: error during generation of Global contracts
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2022-04-29T09:55:02.104000'
+'2022-04-29T09:55:31.452000':
+  category: GNATprove
+  files:
+  - C:\Users\darre\Documents\Ada\SelfDrivingCars\obj\gnatprove
+  label: Basic Prove File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: flow analysis and proof ...
+
+    Summary logged in C:\Users\darre\Documents\Ada\SelfDrivingCars\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2022-04-29T09:55:31.452000'

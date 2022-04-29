@@ -1,0 +1,2 @@
+selfdrivingcar.adb:17:41: medium: range check might fail [reason for check: result of addition must fit in the target type of the assignment][#1]
+selfdrivingcar.ads:63:14: medium: postcondition might fail[#0]

@@ -1,0 +1,1 @@
+selfdrivingcar.ads:18:15: error: component "Speed" cannot be used before end of record declaration
